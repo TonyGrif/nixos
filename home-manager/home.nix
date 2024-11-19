@@ -51,7 +51,11 @@
   ];
 
   programs.home-manager.enable = true;
-  programs.git.enable = true;
+  programs.git = {
+    enable = true;
+    userName = "TonyGrif";
+    userEmail = "TonyGriffin2000@gmail.com";
+  };
 
   home.file.".vimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.vimrc";
 
