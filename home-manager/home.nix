@@ -48,6 +48,9 @@
     vim
     firefox
     (pkgs.nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
+
+    neovim
+    gcc
   ];
 
   programs.home-manager.enable = true;
@@ -58,7 +61,13 @@
   };
 
   home.file.".vimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.vimrc";
-
+  xdg = {
+    enable = true;
+    configFile.nvim = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
+      recursive = true;
+    };
+  };
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
