@@ -80,7 +80,10 @@
     networkmanager.enable = true;
   };
 
-  time.timeZone = "America/New_York";
+  time = {
+    hardwareClockInLocalTime = true;
+    timeZone = "America/New_York";
+  };
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
@@ -127,15 +130,15 @@
   programs = {
     nix-ld = {
       enable = true;
-      libraries = with pkgs; [ ];
+      libraries = with pkgs; [];
     };
   };
 
   users.users = {
     tony = {
       isNormalUser = true;
-      extraGroups = [ "networkmanager" "wheel" ];
-      packages = [ inputs.home-manager.packages.${pkgs.system}.default ];
+      extraGroups = ["networkmanager" "wheel"];
+      packages = [inputs.home-manager.packages.${pkgs.system}.default];
     };
   };
 
