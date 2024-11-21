@@ -17,8 +17,9 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    # Import your generated (nixos-generate-config) hardware configuration
     ./hardware-configuration.nix
+
+    ./imports/nixld.nix
   ];
 
   nixpkgs = {
@@ -125,13 +126,6 @@
     alsa.enable = true;
     alsa.support32Bit = true;
     pulse.enable = true;
-  };
-
-  programs = {
-    nix-ld = {
-      enable = true;
-      libraries = with pkgs; [];
-    };
   };
 
   users.users = {
