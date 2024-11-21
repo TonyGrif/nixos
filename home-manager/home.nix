@@ -51,6 +51,9 @@
 
     neovim
     gcc
+    ripgrep
+
+    discord
   ];
 
   programs.home-manager.enable = true;

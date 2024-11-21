@@ -76,7 +76,7 @@
   };
 
   networking = {
-    hostName = "nixos";
+    hostName = "normandy";
     networkmanager.enable = true;
   };
 
