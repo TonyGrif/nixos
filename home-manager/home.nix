@@ -52,6 +52,7 @@
     neovim
     gcc
     ripgrep
+    cargo
 
     discord
   ];
