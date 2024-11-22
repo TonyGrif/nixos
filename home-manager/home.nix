@@ -18,6 +18,9 @@
   ];
 
   nixpkgs = {
+    overlays = [
+      outputs.overlays.unstable-packages
+    ];
     config = {
       allowUnfree = true;
     };
@@ -33,7 +36,7 @@
     firefox
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
 
-    neovim
+    unstable.neovim
     gcc
     ripgrep
     cargo
