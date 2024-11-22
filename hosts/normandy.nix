@@ -1,26 +1,19 @@
 {
   inputs,
-  outputs,
   lib,
   config,
   pkgs,
   ...
 }: {
   imports = [
-    # If you want to use modules your own flake exports (from modules/nixos):
-    # outputs.nixosModules.example
-
-    # Or modules from other flakes (such as nixos-hardware):
-    # inputs.hardware.nixosModules.common-cpu-amd
-    # inputs.hardware.nixosModules.common-ssd
+    ./hardware-configuration.nix
 
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
-    ./hardware-configuration.nix
-
     ./imports/nixld.nix
     ./imports/locale.nix
+    ./imports/vim.nix
   ];
 
   nixpkgs = {
