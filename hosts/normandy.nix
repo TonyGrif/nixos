@@ -9,6 +9,9 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
+    ./imports/homemanager.nix
+    ./users/tony.nix
+
     ./imports/gnome.nix
     ./imports/locale.nix
     ./imports/nix.nix
@@ -40,14 +43,6 @@
   networking = {
     hostName = "normandy";
     networkmanager.enable = true;
-  };
-
-  users.users = {
-    tony = {
-      isNormalUser = true;
-      extraGroups = ["networkmanager" "wheel"];
-      packages = [inputs.home-manager.packages.${pkgs.system}.default];
-    };
   };
 
   system.stateVersion = "24.05";

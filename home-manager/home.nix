@@ -48,6 +48,13 @@
     userEmail = "TonyGriffin2000@gmail.com";
   };
 
+  programs.bash = {
+    enable = true;
+    sessionVariables = {
+      EDITOR = "vim";
+    };
+  };
+
   home.file.".vimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.vimrc";
   xdg = {
     enable = true;
@@ -56,6 +63,7 @@
       recursive = true;
     };
   };
+
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
