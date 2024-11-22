@@ -12,6 +12,7 @@
     ./imports/nix.nix
     ./imports/nixld.nix
     ./imports/locale.nix
+    ./imports/sound.nix
     ./imports/vim.nix
   ];
 
@@ -56,15 +57,6 @@
       layout = "us";
       variant = "";
     };
-  };
-
-  hardware.pulseaudio.enable = false;
-  security.rtkit.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    pulse.enable = true;
   };
 
   users.users = {
