@@ -1,14 +1,9 @@
 {
-  inputs,
   outputs,
-  pkgs,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
-
-    # You can also split up your configuration and import pieces of it here:
-    # ./users.nix
 
     ./imports/homemanager.nix
     ./users/tony.nix
