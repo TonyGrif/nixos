@@ -9,9 +9,10 @@
     # You can also split up your configuration and import pieces of it here:
     # ./users.nix
 
+    ./imports/gnome.nix
+    ./imports/locale.nix
     ./imports/nix.nix
     ./imports/nixld.nix
-    ./imports/locale.nix
     ./imports/sound.nix
     ./imports/vim.nix
   ];
@@ -39,24 +40,6 @@
   networking = {
     hostName = "normandy";
     networkmanager.enable = true;
-  };
-
-  services.xserver = {
-    enable = true;
-
-    displayManager = {
-      gdm.enable = true;
-    };
-
-    desktopManager = {
-      xterm.enable = false;
-      gnome.enable = true;
-    };
-
-    xkb = {
-      layout = "us";
-      variant = "";
-    };
   };
 
   users.users = {
