@@ -38,6 +38,7 @@
 
     unstable.neovim
     gcc
+    gnumake
     ripgrep
     cargo
 
