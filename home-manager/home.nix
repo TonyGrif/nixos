@@ -41,6 +41,8 @@
     gnumake
     ripgrep
     cargo
+    python3
+    nodejs
 
     discord
   ];
