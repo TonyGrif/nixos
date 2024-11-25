@@ -16,6 +16,7 @@
     inherit (self) outputs;
   in {
     overlays = import ./overlays {inherit inputs;};
+    homeManagerModules = import ./modules/homemanager;
 
     nixosConfigurations = {
       # Desktop

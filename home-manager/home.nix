@@ -7,8 +7,7 @@
   ...
 }: {
   imports = [
-    # If you want to use modules your own flake exports (from modules/home-manager):
-    # outputs.homeManagerModules.example
+    outputs.homeManagerModules.nvim
 
     # Or modules exported from other flakes (such as nix-colors):
     # inputs.nix-colors.homeManagerModules.default
@@ -36,14 +35,6 @@
     firefox
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
 
-    unstable.neovim
-    gcc
-    gnumake
-    ripgrep
-    cargo
-    python3
-    nodejs
-
     discord
   ];
 
@@ -53,6 +44,8 @@
     userName = "TonyGrif";
     userEmail = "TonyGriffin2000@gmail.com";
   };
+
+  nvim.enable = true;
 
   programs.bash = {
     enable = true;
