@@ -14,5 +14,5 @@ in {
     packages = [pkgs.home-manager];
   };
 
-  home-manager.users.tony = import ../../home-manager/home.nix;
+  home-manager.users.tony = import ../../users/tony.nix;
 }

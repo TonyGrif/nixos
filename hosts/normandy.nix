@@ -9,6 +9,7 @@
     ./users/tony.nix
 
     ./imports/gnome.nix
+    ./imports/hyprland.nix
     ./imports/locale.nix
     ./imports/nix.nix
     ./imports/nixld.nix

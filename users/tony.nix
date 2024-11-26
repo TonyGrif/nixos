@@ -36,6 +36,7 @@
     userName = "TonyGrif";
     userEmail = "TonyGriffin2000@gmail.com";
   };
+  programs.kitty.enable = true;
 
   nvim.enable = true;
 
@@ -53,11 +54,14 @@
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
       recursive = true;
     };
+    configFile.hypr = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/hypr/";
+      recursive = true;
+    };
   };
 
   # Nicely reload system units when changing configs
   systemd.user.startServices = "sd-switch";
 
-  # https://nixos.wiki/wiki/FAQ/When_do_I_update_stateVersion
   home.stateVersion = "24.05";
 }
