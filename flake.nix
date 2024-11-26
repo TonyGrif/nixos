@@ -28,14 +28,12 @@
       };
     };
 
-    # Standalone home-manager configuration entrypoint
-    # Available through 'home-manager --flake .#your-username@your-hostname'
     homeConfigurations = {
-      "tony@normandy" = home-manager.lib.homeManagerConfiguration {
+      "tony" = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = {inherit inputs outputs;};
         modules = [
-          ./home-manager/home.nix
+          ./users/tony.nix
         ];
       };
     };
