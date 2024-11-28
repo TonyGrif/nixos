@@ -5,16 +5,14 @@
   imports = [
     ./hardware-configuration.nix
 
-    ./imports/homemanager.nix
+    ./global.nix
+
     ./users/tony.nix
 
     ./imports/gnome.nix
     ./imports/hyprland.nix
-    ./imports/locale.nix
-    ./imports/nix.nix
     ./imports/nixld.nix
     ./imports/sound.nix
-    ./imports/vim.nix
   ];
 
   nixpkgs = {
@@ -39,6 +37,7 @@
     };
     systemd-boot.enable = false;
   };
+  time.hardwareClockInLocalTime = true;
 
   networking = {
     hostName = "citadel";
