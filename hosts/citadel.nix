@@ -41,7 +41,7 @@
   };
 
   networking = {
-    hostName = "normandy";
+    hostName = "citadel";
     networkmanager.enable = true;
   };
 

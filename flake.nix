@@ -20,10 +20,10 @@
 
     nixosConfigurations = {
       # Desktop
-      "normandy" = nixpkgs.lib.nixosSystem {
+      "citadel" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/normandy.nix
+          ./hosts/citadel.nix
         ];
       };
     };
