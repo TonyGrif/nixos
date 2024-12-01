@@ -18,6 +18,8 @@
     overlays = import ./overlays {inherit inputs;};
     homeManagerModules = import ./modules/homemanager;
 
+    formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
+
     nixosConfigurations = {
       # Desktop
       "citadel" = nixpkgs.lib.nixosSystem {
