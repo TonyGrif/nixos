@@ -5,8 +5,8 @@
   config,
   ...
 }: let
-    flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-in{
+  flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
+in {
   imports = [
     inputs.home-manager.nixosModules.home-manager
   ];

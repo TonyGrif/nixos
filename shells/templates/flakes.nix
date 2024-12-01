@@ -1,13 +1,17 @@
 {
-  description="Nix flake for ... projects";
+  description = "Nix flake for ... projects";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
   };
 
-  outputs = { self, nixpkgs, nixpkgs-unstable, ... }:
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    nixpkgs-unstable,
+    ...
+  }: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
@@ -20,10 +24,9 @@
         })
       ];
     };
-  in
-  {
+  in {
     devShells.${system}.default = pkgs.mkShell {
-      packages = with pkgs; [ ];
+      packages = with pkgs; [];
     };
   };
 }

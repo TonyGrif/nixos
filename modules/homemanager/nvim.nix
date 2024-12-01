@@ -1,5 +1,10 @@
-{outputs, lib, config, pkgs, ...}:
 {
+  outputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   options = {
     nvim.enable = lib.mkEnableOption "Enable neovim and needed requirements";
   };

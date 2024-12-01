@@ -3,9 +3,8 @@ let
   pkgs = import <nixpkgs> {};
   unstable = import unstableTarball {};
 in
-
-pkgs.mkShellNoCC {
-  packages = with pkgs; [
+  pkgs.mkShellNoCC {
+    packages = with pkgs; [
       poetry
-  ];
-}
+    ];
+  }

@@ -3,7 +3,6 @@ let
   pkgs = import <nixpkgs> {};
   unstable = import unstableTarball {};
 in
-
-pkgs.mkShell {
+  pkgs.mkShell {
     packages = with pkgs; [];
-}
+  }

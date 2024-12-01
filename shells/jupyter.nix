@@ -3,11 +3,10 @@ let
   pkgs = import <nixpkgs> {};
   unstable = import unstableTarball {};
 in
-
-pkgs.mkShellNoCC {
+  pkgs.mkShellNoCC {
     packages = with pkgs; [
       python312Packages.jupyterlab
       python312Packages.pandas
       python312Packages.seaborn
     ];
-}
+  }
