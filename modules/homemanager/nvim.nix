@@ -24,6 +24,7 @@
       cargo
       python3
       nodejs
+      go
     ];
   };
 }
