@@ -2,13 +2,15 @@
   imports = [
     ./hardware-configuration.nix
 
-    ./users/tony.nix
+    ./boot/dualgrub.nix
 
     ./imports/global.nix
     ./imports/gnome.nix
     ./imports/hyprland.nix
     ./imports/nixld.nix
     ./imports/sound.nix
+
+    ./users/tony.nix
   ];
 
   nixpkgs = {
@@ -19,21 +21,6 @@
       allowUnfree = true;
     };
   };
-
-  boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      efiSysMountPoint = "/boot";
-    };
-    grub = {
-      enable = true;
-      efiSupport = true;
-      device = "nodev";
-      useOSProber = true;
-    };
-    systemd-boot.enable = false;
-  };
-  time.hardwareClockInLocalTime = true;
 
   networking = {
     hostName = "citadel";
