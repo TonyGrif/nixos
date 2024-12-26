@@ -23,11 +23,12 @@
   };
 
   home.packages = with pkgs; [
-    vim
     firefox
-    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
-
     discord
+    spotify
+    obsidian
+
+    (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
   programs.home-manager.enable = true;
