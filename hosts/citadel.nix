@@ -2,10 +2,9 @@
   imports = [
     ./hardware-configuration.nix
 
-    ./global.nix
-
     ./users/tony.nix
 
+    ./imports/global.nix
     ./imports/gnome.nix
     ./imports/hyprland.nix
     ./imports/nixld.nix
