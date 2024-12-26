@@ -1,6 +1,11 @@
-{config, lib, inputs, ...}: let
+{
+  config,
+  lib,
+  inputs,
+  ...
+}: let
   flakeInputs = lib.filterAttrs (_: lib.isType "flake") inputs;
-in{
+in {
   nix = {
     settings = {
       experimental-features = "nix-command flakes";
