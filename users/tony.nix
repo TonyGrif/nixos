@@ -28,6 +28,7 @@
     spotify
     obsidian
 
+    kitty
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
@@ -37,7 +38,6 @@
     userName = "TonyGrif";
     userEmail = "TonyGriffin2000@gmail.com";
   };
-  programs.kitty.enable = true;
 
   nvim.enable = true;
 
@@ -57,6 +57,10 @@
     };
     configFile.hypr = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/hypr/";
+      recursive = true;
+    };
+    configFile.kitty = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/kitty/";
       recursive = true;
     };
   };
