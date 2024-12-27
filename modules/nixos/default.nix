@@ -1,0 +1,3 @@
+{
+  qtile = import ./qtile.nix;
+}

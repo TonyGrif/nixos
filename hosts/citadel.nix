@@ -17,6 +17,8 @@
 
     inputs.home-manager.nixosModules.home-manager
     ./users/tony.nix
+
+    outputs.nixosModules.qtile
   ];
 
   networking = {
@@ -32,6 +34,8 @@
       allowUnfree = true;
     };
   };
+
+  qtile.enable = true;
 
   home-manager = {
     extraSpecialArgs = {

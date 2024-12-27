@@ -16,6 +16,7 @@
     inherit (self) outputs;
   in {
     overlays = import ./overlays {inherit inputs;};
+    nixosModules = import ./modules/nixos;
     homeManagerModules = import ./modules/homemanager;
 
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
