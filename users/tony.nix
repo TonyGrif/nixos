@@ -28,7 +28,6 @@
     spotify
     obsidian
 
-    kitty
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
@@ -55,8 +54,8 @@
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
       recursive = true;
     };
-    configFile.hypr = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/hypr/";
+    configFile.qtile = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/qtile/";
       recursive = true;
     };
     configFile.kitty = {

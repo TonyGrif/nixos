@@ -18,7 +18,7 @@
 
     services.xserver.windowManager.qtile = {
       enable = true;
-      extraPackages = python3Packages: with python3Packages; [ ];
+      extraPackages = python3Packages: with python3Packages; [];
     };
 
     environment.systemPackages = with pkgs; [
