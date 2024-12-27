@@ -9,7 +9,6 @@
     ./boot/dualgrub.nix
 
     ./imports/gnome.nix
-    ./imports/hyprland.nix
     ./imports/nix.nix
     ./imports/nixld.nix
     ./imports/sound.nix
