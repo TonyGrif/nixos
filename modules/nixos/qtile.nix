@@ -21,8 +21,10 @@
       extraPackages = python3Packages: with python3Packages; [];
     };
 
+    # TODO: Move these packages into homemanger
     environment.systemPackages = with pkgs; [
       kitty
+      rofi
     ];
   };
 }
