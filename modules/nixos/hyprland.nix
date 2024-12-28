@@ -5,6 +5,10 @@
   pkgs,
   ...
 }: {
+  imports = [
+    ./waybar.nix
+  ];
+
   options = {
     hyprland.enable = lib.mkEnableOption "Enable hyprland and other complimentary programs";
   };
@@ -27,9 +31,12 @@
       graphics.enable = true;
     };
 
+    waybar = {
+      enable = true;
+    };
+
     environment.systemPackages = with pkgs; [
       kitty
-      waybar
     ];
   };
 }
