@@ -18,7 +18,7 @@
     inputs.home-manager.nixosModules.home-manager
     ./users/tony.nix
 
-    outputs.nixosModules.qtile
+    outputs.nixosModules.hyprland
   ];
 
   networking = {
@@ -35,7 +35,7 @@
     };
   };
 
-  qtile.enable = true;
+  hyprland.enable = true;
 
   home-manager = {
     extraSpecialArgs = {
