@@ -67,6 +67,10 @@
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/rofi/";
       recursive = true;
     };
+    configFile.waybar = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/waybar/";
+      recursive = true;
+    };
   };
 
   # Nicely reload system units when changing configs
