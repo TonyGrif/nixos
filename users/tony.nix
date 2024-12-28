@@ -28,6 +28,7 @@
     spotify
     obsidian
 
+    rofi-wayland
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
   ];
 
@@ -63,9 +64,9 @@
       recursive = true;
     };
     configFile.rofi = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config//";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/rofi/";
       recursive = true;
-     };
+    };
   };
 
   # Nicely reload system units when changing configs
