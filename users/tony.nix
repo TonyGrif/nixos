@@ -54,8 +54,8 @@
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
       recursive = true;
     };
-    configFile.qtile = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/qtile/";
+    configFile.hypr = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/hypr/";
       recursive = true;
     };
     configFile.kitty = {
@@ -63,7 +63,7 @@
       recursive = true;
     };
     configFile.rofi = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/rofi/";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config//";
       recursive = true;
      };
   };
