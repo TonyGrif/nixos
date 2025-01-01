@@ -9,13 +9,15 @@
 in{
   imports = [
     ./dolphin.nix
+    ./wofi.nix
     ./waybar.nix
   ];
 
   options = {
     hyprland = {
-      enable = lib.mkEnableOption "Enable hyprland";
-      dolphin = lib.mkEnableOption "Enable dolphin";
+      enable = lib.mkEnableOption "Enable hyprland module";
+      dolphin = lib.mkEnableOption "Enable dolphin file manager";
+      wofi = lib.mkEnableOption "Enable wofi launcher";
     };
   };
 
@@ -38,6 +40,7 @@ in{
     };
 
     dolphin.enable = lib.mkIf (cfg.dolphin) true;
+    wofi.enable = lib.mkIf (cfg.wofi) true;
 
     waybar = {
       enable = true;

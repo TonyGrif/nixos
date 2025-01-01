@@ -38,6 +38,7 @@
   hyprland = {
     enable = true;
     dolphin = false;
+    wofi = false;
   };
 
   home-manager = {
