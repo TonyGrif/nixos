@@ -1,4 +1,4 @@
 {
-  hyprland = import ./hyprland/hyprland.nix;
+  hyprland = import ./hyprland;
   qtile = import ./qtile.nix;
 }
