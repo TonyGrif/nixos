@@ -35,7 +35,10 @@
     };
   };
 
-  hyprland.enable = true;
+  hyprland = {
+    enable = true;
+    dolphin = false;
+  };
 
   home-manager = {
     extraSpecialArgs = {

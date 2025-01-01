@@ -1,3 +1,5 @@
+# TODO: Move this to home-manger
+
 {
   config,
   lib,

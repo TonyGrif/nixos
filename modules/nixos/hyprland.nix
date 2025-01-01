@@ -4,16 +4,22 @@
   config,
   pkgs,
   ...
-}: {
+}: let
+  cfg = config.hyprland;
+in{
   imports = [
+    ./dolphin.nix
     ./waybar.nix
   ];
 
   options = {
-    hyprland.enable = lib.mkEnableOption "Enable hyprland and other complimentary programs";
+    hyprland = {
+      enable = lib.mkEnableOption "Enable hyprland";
+      dolphin = lib.mkEnableOption "Enable dolphin";
+    };
   };
 
-  config = lib.mkIf config.hyprland.enable {
+  config = lib.mkIf cfg.enable {
     nixpkgs = {
       overlays = [
         outputs.overlays.unstable-packages
@@ -30,6 +36,8 @@
     hardware = {
       graphics.enable = true;
     };
+
+    dolphin.enable = lib.mkIf (cfg.dolphin) true;
 
     waybar = {
       enable = true;
