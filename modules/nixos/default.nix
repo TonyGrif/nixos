@@ -1,5 +1,4 @@
 {
-  hyprland = import ./hyprland.nix;
+  hyprland = import ./hyprland/hyprland.nix;
   qtile = import ./qtile.nix;
-  waybar = import ./waybar.nix;
 }
