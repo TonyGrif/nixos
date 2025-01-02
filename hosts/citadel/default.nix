@@ -8,7 +8,6 @@
 
     ../boot/dualgrub.nix
 
-    ../imports/gnome.nix
     ../imports/nix.nix
     ../imports/nixld.nix
     ../imports/sound.nix
@@ -19,6 +18,7 @@
     ../users/tony.nix
 
     outputs.nixosModules.hyprland
+    outputs.nixosModules.gnome
   ];
 
   networking = {
@@ -33,6 +33,10 @@
     config = {
       allowUnfree = true;
     };
+  };
+
+  gnome = {
+    enable = true;
   };
 
   hyprland = {
