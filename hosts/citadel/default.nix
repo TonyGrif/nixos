@@ -6,17 +6,17 @@
   imports = [
     ./hardware-configuration.nix
 
-    ./boot/dualgrub.nix
+    ../boot/dualgrub.nix
 
-    ./imports/gnome.nix
-    ./imports/nix.nix
-    ./imports/nixld.nix
-    ./imports/sound.nix
-    ./imports/time.nix
-    ./imports/vim.nix
+    ../imports/gnome.nix
+    ../imports/nix.nix
+    ../imports/nixld.nix
+    ../imports/sound.nix
+    ../imports/time.nix
+    ../imports/vim.nix
 
     inputs.home-manager.nixosModules.home-manager
-    ./users/tony.nix
+    ../users/tony.nix
 
     outputs.nixosModules.hyprland
   ];

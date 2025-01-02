@@ -26,7 +26,7 @@
       "citadel" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
-          ./hosts/citadel.nix
+          ./hosts/citadel
         ];
       };
     };
