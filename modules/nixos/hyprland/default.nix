@@ -38,6 +38,11 @@ in {
       graphics.enable = true;
     };
 
+    xdg.portal = {
+      enable = true;
+      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+    };
+
     dolphin.enable = lib.mkIf (cfg.dolphin) true;
     wofi.enable = lib.mkIf (cfg.wofi) true;
 
