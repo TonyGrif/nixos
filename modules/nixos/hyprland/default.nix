@@ -10,7 +10,6 @@ in{
   imports = [
     ./dolphin.nix
     ./wofi.nix
-    ./waybar.nix
   ];
 
   options = {
@@ -41,10 +40,6 @@ in{
 
     dolphin.enable = lib.mkIf (cfg.dolphin) true;
     wofi.enable = lib.mkIf (cfg.wofi) true;
-
-    waybar = {
-      enable = true;
-    };
 
     environment.systemPackages = with pkgs; [
       kitty

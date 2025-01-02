@@ -6,6 +6,7 @@
 }: {
   imports = [
     outputs.homeManagerModules.nvim
+    outputs.homeManagerModules.waybar
   ];
 
   nixpkgs = {
@@ -40,6 +41,10 @@
   };
 
   nvim.enable = true;
+  waybar = {
+    enable = true;
+    experimental = true;
+  };
 
   programs.bash = {
     enable = true;
