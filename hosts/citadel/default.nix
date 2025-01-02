@@ -10,7 +10,6 @@
 
     ../imports/nix.nix
     ../imports/nixld.nix
-    ../imports/sound.nix
     ../imports/time.nix
     ../imports/vim.nix
 
@@ -19,6 +18,7 @@
 
     outputs.nixosModules.hyprland
     outputs.nixosModules.gnome
+    outputs.nixosModules.pipewire
   ];
 
   networking = {
@@ -35,9 +35,9 @@
     };
   };
 
-  gnome = {
-    enable = true;
-  };
+  pipewire.enable = true;
+
+  gnome.enable = true;
 
   hyprland = {
     enable = true;
