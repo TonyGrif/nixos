@@ -6,6 +6,7 @@
 }: {
   imports = [
     outputs.homeManagerModules.nvim
+    outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.waybar
   ];
 
@@ -41,10 +42,12 @@
   };
 
   nvim.enable = true;
+
   waybar = {
     enable = true;
     experimental = true;
   };
+  hyprpaper.enable = true;
 
   programs.bash = {
     enable = true;
