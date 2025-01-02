@@ -6,7 +6,7 @@
   ...
 }: let
   cfg = config.hyprland;
-in{
+in {
   imports = [
     ./dolphin.nix
     ./wofi.nix
