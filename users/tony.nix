@@ -32,6 +32,7 @@
 
     rofi-wayland
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
+    tmux
   ];
 
   programs.home-manager.enable = true;
