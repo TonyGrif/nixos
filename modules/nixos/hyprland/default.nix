@@ -1,5 +1,4 @@
 {
-  outputs,
   lib,
   config,
   pkgs,
@@ -21,12 +20,6 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    nixpkgs = {
-      overlays = [
-        outputs.overlays.unstable-packages
-      ];
-    };
-
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
