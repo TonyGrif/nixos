@@ -37,7 +37,10 @@
 
   pipewire.enable = true;
 
-  gnome.enable = true;
+  gnome = {
+    enable = true;
+    gdm = true;
+  };
 
   hyprland = {
     enable = true;
