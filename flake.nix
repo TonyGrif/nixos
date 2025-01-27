@@ -29,6 +29,13 @@
           ./hosts/citadel
         ];
       };
+      # Laptop
+      "normandy" = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs outputs;};
+        modules = [
+          ./hosts/normandy
+        ];
+      };
     };
 
     homeConfigurations = {
