@@ -9,7 +9,6 @@
     ../boot/grub.nix
 
     ../imports/nix.nix
-    ../imports/nixld.nix
     ../imports/time.nix
     ../imports/vim.nix
 
