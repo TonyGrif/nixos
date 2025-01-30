@@ -10,7 +10,6 @@
 
     ../imports/nix.nix
     ../imports/time.nix
-    ../imports/vim.nix
 
     inputs.home-manager.nixosModules.home-manager
     ../users/tony.nix
@@ -18,6 +17,7 @@
     outputs.nixosModules.hyprland
     outputs.nixosModules.gnome
     outputs.nixosModules.pipewire
+    outputs.nixosModules.vim
   ];
 
   networking = {
@@ -46,6 +46,8 @@
     dolphin = false;
     wofi = false;
   };
+
+  vim.enable = true;
 
   home-manager = {
     extraSpecialArgs = {
