@@ -14,6 +14,7 @@
     inputs.home-manager.nixosModules.home-manager
     ../users/tony.nix
 
+    outputs.nixosModules.docker
     outputs.nixosModules.hyprland
     outputs.nixosModules.gnome
     outputs.nixosModules.pipewire
@@ -35,6 +36,7 @@
   };
 
   pipewire.enable = true;
+  docker.enable = true;
 
   gnome = {
     enable = true;

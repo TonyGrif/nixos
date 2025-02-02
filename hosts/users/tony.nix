@@ -10,6 +10,7 @@ in {
     extraGroups = ifTheyExist [
       "networkmanager"
       "wheel"
+      "docker"
     ];
     packages = [pkgs.home-manager];
   };
