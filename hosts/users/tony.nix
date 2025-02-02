@@ -10,6 +10,7 @@ in {
     extraGroups = ifTheyExist [
       "networkmanager"
       "wheel"
+      "libvirtd"
       "docker"
     ];
     packages = [pkgs.home-manager];

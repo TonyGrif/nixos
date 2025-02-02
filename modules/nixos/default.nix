@@ -4,4 +4,5 @@
   hyprland = import ./hyprland;
   pipewire = import ./pipewire.nix;
   vim = import ./vim.nix;
+  virtmanager = import ./virtmanager.nix;
 }

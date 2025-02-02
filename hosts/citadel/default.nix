@@ -19,6 +19,7 @@
     outputs.nixosModules.gnome
     outputs.nixosModules.pipewire
     outputs.nixosModules.vim
+    outputs.nixosModules.virtmanager
   ];
 
   networking = {
@@ -50,6 +51,8 @@
   };
 
   vim.enable = true;
+
+  virtmanager.enable = true;
 
   home-manager = {
     extraSpecialArgs = {
