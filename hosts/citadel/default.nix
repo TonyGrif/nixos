@@ -18,6 +18,7 @@
     outputs.nixosModules.hyprland
     outputs.nixosModules.gnome
     outputs.nixosModules.pipewire
+    outputs.nixosModules.ollama
     outputs.nixosModules.vim
     outputs.nixosModules.virtmanager
   ];
@@ -52,6 +53,7 @@
 
   vim.enable = true;
 
+  ollama.enable = true;
   virtmanager.enable = true;
 
   home-manager = {
