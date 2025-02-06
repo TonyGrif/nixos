@@ -6,14 +6,13 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../boot/dualgrub.nix
-
     ../imports/nix.nix
     ../imports/time.nix
 
     inputs.home-manager.nixosModules.home-manager
     ../users/tony.nix
 
+    outputs.nixosModules.grub
     outputs.nixosModules.docker
     outputs.nixosModules.hyprland
     outputs.nixosModules.gnome
@@ -22,6 +21,11 @@
     outputs.nixosModules.vim
     outputs.nixosModules.virtmanager
   ];
+
+  grub = {
+    enable = true;
+    dualboot = true;
+  };
 
   networking = {
     hostName = "citadel";
