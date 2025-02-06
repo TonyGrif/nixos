@@ -53,7 +53,10 @@
 
   vim.enable = true;
 
-  ollama.enable = true;
+  ollama = {
+    enable = true;
+    webui = true;
+  };
   virtmanager.enable = true;
 
   home-manager = {

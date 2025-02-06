@@ -33,7 +33,7 @@ in {
 
     xdg.portal = {
       enable = true;
-      extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+      extraPortals = [pkgs.xdg-desktop-portal-gtk];
     };
 
     dolphin.enable = lib.mkIf (cfg.dolphin) true;
