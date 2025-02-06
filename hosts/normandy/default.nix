@@ -6,19 +6,20 @@
   imports = [
     ./hardware-configuration.nix
 
-    ../boot/grub.nix
-
     ../imports/nix.nix
     ../imports/time.nix
 
     inputs.home-manager.nixosModules.home-manager
     ../users/tony.nix
 
+    outputs.nixosModules.grub
     outputs.nixosModules.hyprland
     outputs.nixosModules.gnome
     outputs.nixosModules.pipewire
     outputs.nixosModules.vim
   ];
+
+  grub.enable = true;
 
   networking = {
     hostName = "normandy";
