@@ -5,6 +5,8 @@
 }: {
   imports = [
     ./hardware-configuration.nix
+    outputs.nixosModules.grub
+    outputs.nixosModules.gdm
 
     ../imports/nix.nix
     ../imports/time.nix
@@ -12,7 +14,6 @@
     inputs.home-manager.nixosModules.home-manager
     ../users/tony.nix
 
-    outputs.nixosModules.grub
     outputs.nixosModules.docker
     outputs.nixosModules.hyprland
     outputs.nixosModules.gnome
@@ -26,6 +27,8 @@
     enable = true;
     dualboot = true;
   };
+
+  gdm.enable = true;
 
   networking = {
     hostName = "citadel";
@@ -46,7 +49,6 @@
 
   gnome = {
     enable = true;
-    gdm = true;
   };
 
   hyprland = {
