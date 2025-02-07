@@ -7,6 +7,7 @@
   imports = [
     ./globals.nix
 
+    outputs.homeManagerModules.fonts
     outputs.homeManagerModules.nvim
     outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.waybar
@@ -34,9 +35,7 @@
     userEmail = "TonyGriffin2000@gmail.com";
   };
 
-  fonts.packages = with pkgs; [
-    (nerdfonts.override {fonts = ["JetBrainsMono"];})
-  ];
+  fonts.enable = true;
 
   home.packages = with pkgs; [
     firefox
