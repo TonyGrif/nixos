@@ -22,7 +22,7 @@ in {
         enable = true;
         efiSupport = true;
         device = "nodev";
-        useOSProber = lib.mkIf(cfg.dualboot) true;
+        useOSProber = lib.mkIf (cfg.dualboot) true;
       };
       systemd-boot.enable = false;
     };

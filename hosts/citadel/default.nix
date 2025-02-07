@@ -15,12 +15,12 @@
     outputs.nixosModules.gnome
     outputs.nixosModules.hyprland
 
-    inputs.home-manager.nixosModules.home-manager
-    ../users/tony.nix
-
     outputs.nixosModules.docker
     outputs.nixosModules.ollama
     outputs.nixosModules.virtmanager
+
+    inputs.home-manager.nixosModules.home-manager
+    ../users/tony.nix
   ];
 
   networking = {
@@ -44,7 +44,6 @@
   };
 
   docker.enable = true;
-
   ollama = {
     enable = true;
     webui = true;
