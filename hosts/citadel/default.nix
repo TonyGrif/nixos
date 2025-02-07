@@ -4,58 +4,47 @@
   ...
 }: {
   imports = [
+    ../globals.nix
+
     ./hardware-configuration.nix
     outputs.nixosModules.grub
     outputs.nixosModules.gdm
 
-    ../imports/nix.nix
-    ../imports/time.nix
+    outputs.nixosModules.pipewire
+
+    outputs.nixosModules.gnome
+    outputs.nixosModules.hyprland
 
     inputs.home-manager.nixosModules.home-manager
     ../users/tony.nix
 
     outputs.nixosModules.docker
-    outputs.nixosModules.hyprland
-    outputs.nixosModules.gnome
-    outputs.nixosModules.pipewire
     outputs.nixosModules.ollama
     outputs.nixosModules.vim
     outputs.nixosModules.virtmanager
   ];
-
-  grub = {
-    enable = true;
-    dualboot = true;
-  };
-
-  gdm.enable = true;
 
   networking = {
     hostName = "citadel";
     networkmanager.enable = true;
   };
 
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.unstable-packages
-    ];
-    config = {
-      allowUnfree = true;
-    };
+  grub = {
+    enable = true;
+    dualboot = true;
   };
+  gdm.enable = true;
 
   pipewire.enable = true;
-  docker.enable = true;
 
-  gnome = {
-    enable = true;
-  };
-
+  gnome.enable = true;
   hyprland = {
     enable = true;
     dolphin = false;
     wofi = false;
   };
+
+  docker.enable = true;
 
   vim.enable = true;
 

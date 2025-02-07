@@ -4,44 +4,34 @@
   ...
 }: {
   imports = [
-    ./hardware-configuration.nix
+    ../globals.nix
 
-    ../imports/nix.nix
-    ../imports/time.nix
+    ./hardware-configuration.nix
+    outputs.nixosModules.grub
+    outputs.nixosModules.gdm
+
+    outputs.nixosModules.pipewire
+
+    outputs.nixosModules.gnome
+    outputs.nixosModules.hyprland
 
     inputs.home-manager.nixosModules.home-manager
     ../users/tony.nix
 
-    outputs.nixosModules.grub
-    outputs.nixosModules.hyprland
-    outputs.nixosModules.gnome
-    outputs.nixosModules.pipewire
     outputs.nixosModules.vim
   ];
-
-  grub.enable = true;
 
   networking = {
     hostName = "normandy";
     networkmanager.enable = true;
   };
 
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.unstable-packages
-    ];
-    config = {
-      allowUnfree = true;
-    };
-  };
+  grub.enable = true;
+  gdm.enable = true;
 
   pipewire.enable = true;
 
-  gnome = {
-    enable = true;
-    gdm = true;
-  };
-
+  gnome.enable = true;
   hyprland = {
     enable = true;
     dolphin = false;
