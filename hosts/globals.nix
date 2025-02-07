@@ -50,4 +50,9 @@ in {
       LC_TIME = "en_US.UTF-8";
     };
   };
+
+  programs.vim = {
+    enable = true;
+    defaultEditor = true;
+  };
 }

@@ -20,7 +20,6 @@
 
     outputs.nixosModules.docker
     outputs.nixosModules.ollama
-    outputs.nixosModules.vim
     outputs.nixosModules.virtmanager
   ];
 
@@ -45,8 +44,6 @@
   };
 
   docker.enable = true;
-
-  vim.enable = true;
 
   ollama = {
     enable = true;
