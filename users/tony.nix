@@ -5,19 +5,12 @@
   ...
 }: {
   imports = [
+    ./globals.nix
+
     outputs.homeManagerModules.nvim
     outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.waybar
   ];
-
-  nixpkgs = {
-    overlays = [
-      outputs.overlays.unstable-packages
-    ];
-    config = {
-      allowUnfree = true;
-    };
-  };
 
   home = {
     username = "tony";
@@ -29,8 +22,12 @@
     discord
     spotify
     obsidian
-
+    zoom-us
+    distrobox
+    pavucontrol
+    yazi
     rofi-wayland
+    wl-clipboard
     (pkgs.nerdfonts.override {fonts = ["JetBrainsMono"];})
     tmux
   ];
@@ -57,7 +54,11 @@
     };
   };
 
-  home.file.".vimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.vimrc";
+  home = {
+    file.".vimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.vimrc";
+    file.".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.tmux.conf";
+  };
+
   xdg = {
     enable = true;
     configFile.nvim = {
