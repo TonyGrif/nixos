@@ -12,6 +12,7 @@
 
     outputs.homeManagerModules.vscode
     outputs.homeManagerModules.nvim
+    outputs.homeManagerModules.jetbrains
 
     outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.waybar
@@ -45,6 +46,7 @@
 
   vscode.enable = true;
   nvim.enable = true;
+  jetbrains.enable = true;
 
   waybar = {
     enable = true;
