@@ -1,3 +1,4 @@
+# TODO: Make kitty its own option
 {
   lib,
   config,

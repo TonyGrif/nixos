@@ -1,3 +1,4 @@
+# TODO: Add options for Grub theme, font, and font size
 {
   lib,
   config,
