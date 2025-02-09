@@ -10,7 +10,9 @@
     outputs.homeManagerModules.fonts
     outputs.homeManagerModules.firefox
 
+    outputs.homeManagerModules.vscode
     outputs.homeManagerModules.nvim
+
     outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.waybar
   ];
@@ -41,6 +43,7 @@
 
   firefox.enable = true;
 
+  vscode.enable = true;
   nvim.enable = true;
 
   waybar = {
