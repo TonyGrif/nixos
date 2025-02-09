@@ -8,6 +8,8 @@
     ./globals.nix
 
     outputs.homeManagerModules.fonts
+    outputs.homeManagerModules.firefox
+
     outputs.homeManagerModules.nvim
     outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.waybar
@@ -19,6 +21,8 @@
   };
 
   programs.home-manager.enable = true;
+  fonts.enable = true;
+
   programs.bash = {
     enable = true;
     sessionVariables = {
@@ -35,21 +39,7 @@
     userEmail = "TonyGriffin2000@gmail.com";
   };
 
-  fonts.enable = true;
-
-  home.packages = with pkgs; [
-    firefox
-    discord
-    spotify
-    obsidian
-    zoom-us
-    distrobox
-    pavucontrol
-    yazi
-    rofi-wayland
-    wl-clipboard
-    tmux
-  ];
+  firefox.enable = true;
 
   nvim.enable = true;
 
@@ -58,6 +48,20 @@
     experimental = true;
   };
   hyprpaper.enable = true;
+
+  home.packages = with pkgs; [
+    discord
+    spotify
+    obsidian
+    zoom-us
+
+    # Create separate modules
+    pavucontrol
+    yazi
+    rofi-wayland
+    wl-clipboard
+    tmux
+  ];
 
   home = {
     file.".vimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.vimrc";

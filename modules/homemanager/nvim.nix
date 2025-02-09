@@ -1,3 +1,5 @@
+# TODO: Move plugin requirements into own option
+# TODO: Move LSP Requirements into own option
 {
   outputs,
   lib,

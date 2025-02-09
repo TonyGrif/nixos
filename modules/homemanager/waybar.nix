@@ -1,3 +1,4 @@
+# TODO: Add config option
 {
   config,
   lib,
