@@ -1,6 +1,6 @@
 {
   docker = import ./docker.nix;
-  gdm = import ./gdm.nix;
+  displaymanagers = import ./displaymanagers;
   gnome = import ./gnome.nix;
   grub = import ./grub.nix;
   hyprland = import ./hyprland;

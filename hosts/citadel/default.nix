@@ -8,7 +8,7 @@
 
     ./hardware-configuration.nix
     outputs.nixosModules.grub
-    outputs.nixosModules.gdm
+    outputs.nixosModules.displaymanagers
 
     outputs.nixosModules.pipewire
 
@@ -32,7 +32,7 @@
     enable = true;
     dualboot = true;
   };
-  gdm.enable = true;
+  displaymanagers.gdm.enable = true;
 
   pipewire.enable = true;
 
