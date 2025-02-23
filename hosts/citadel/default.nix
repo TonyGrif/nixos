@@ -10,11 +10,11 @@
     outputs.nixosModules.grub
     outputs.nixosModules.displaymanagers
 
+    outputs.nixosModules.gnome
     outputs.nixosModules.windowmanagers
 
     outputs.nixosModules.pipewire
 
-    outputs.nixosModules.gnome
     outputs.nixosModules.hyprland
 
     outputs.nixosModules.docker
@@ -36,11 +36,11 @@
   };
   displaymanagers.gdm.enable = true;
 
+  gnome.enable = true;
   windowmanagers.i3 = true;
 
   pipewire.enable = true;
 
-  gnome.enable = true;
   hyprland = {
     enable = true;
     dolphin = false;
