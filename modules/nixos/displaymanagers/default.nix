@@ -11,11 +11,11 @@ in {
 
   options = {
     displaymanagers = {
-      gdm.enable = lib.mkEnableOption "Enable gdm module";
+      gdm = lib.mkEnableOption "Enable gdm module";
     };
   };
 
   config = {
-    gdm.enable = lib.mkIf (cfg.gdm.enable) true;
+    gdm.enable = lib.mkIf (cfg.gdm) true;
   };
 }

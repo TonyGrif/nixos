@@ -34,7 +34,7 @@
     enable = true;
     dualboot = true;
   };
-  displaymanagers.gdm.enable = true;
+  displaymanagers.gdm = true;
 
   gnome.enable = true;
   windowmanagers.i3 = true;
