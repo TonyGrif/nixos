@@ -1,6 +1,7 @@
 {
   docker = import ./docker.nix;
   displaymanagers = import ./displaymanagers;
+  windowmanagers = import ./windowmanagers;
   gnome = import ./gnome.nix;
   grub = import ./grub.nix;
   hyprland = import ./hyprland;

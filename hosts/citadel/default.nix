@@ -10,6 +10,8 @@
     outputs.nixosModules.grub
     outputs.nixosModules.displaymanagers
 
+    outputs.nixosModules.windowmanagers
+
     outputs.nixosModules.pipewire
 
     outputs.nixosModules.gnome
@@ -33,6 +35,8 @@
     dualboot = true;
   };
   displaymanagers.gdm.enable = true;
+
+  windowmanagers.i3 = true;
 
   pipewire.enable = true;
 
