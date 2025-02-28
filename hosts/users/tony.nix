@@ -8,10 +8,10 @@ in {
   users.users.tony = {
     isNormalUser = true;
     extraGroups = ifTheyExist [
+      "docker"
+      "libvirtd"
       "networkmanager"
       "wheel"
-      "libvirtd"
-      "docker"
     ];
     packages = [pkgs.home-manager];
   };

@@ -28,10 +28,6 @@ in {
     };
   };
 
-  programs.nix-ld = {
-    enable = true;
-  };
-
   time = {
     timeZone = "America/New_York";
   };
@@ -51,8 +47,17 @@ in {
     };
   };
 
-  programs.vim = {
-    enable = true;
-    defaultEditor = true;
+  programs = {
+    nix-ld.enable = true;
+    vim = {
+      enable = true;
+      defaultEditor = true;
+    };
+  };
+
+  home-manager = {
+    extraSpecialArgs = {
+      inherit inputs outputs;
+    };
   };
 }

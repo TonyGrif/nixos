@@ -4,9 +4,9 @@
   config,
   pkgs,
   ...
-}: let 
+}: let
   cfg = config.nvim;
-in{
+in {
   options = {
     nvim = {
       enable = lib.mkEnableOption "Enable neovim and needed requirements";
@@ -22,19 +22,20 @@ in{
       ];
     };
 
-    home.packages = with pkgs; [
-      unstable.neovim
-    ]
-    ++ lib.optionals (cfg.pluginRequirements) [
-      gcc
-      ripgrep
-    ]
-    ++ lib.optionals (cfg.lspRequirements) [
-      gnumake
-      cargo
-      python3
-      nodejs
-      go
-    ];
+    home.packages = with pkgs;
+      [
+        unstable.neovim
+      ]
+      ++ lib.optionals (cfg.pluginRequirements) [
+        gcc
+        ripgrep
+      ]
+      ++ lib.optionals (cfg.lspRequirements) [
+        gnumake
+        cargo
+        python3
+        nodejs
+        go
+      ];
   };
 }

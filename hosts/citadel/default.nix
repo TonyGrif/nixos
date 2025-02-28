@@ -54,11 +54,5 @@
   };
   virtmanager.enable = true;
 
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs outputs;
-    };
-  };
-
   system.stateVersion = "24.05";
 }
