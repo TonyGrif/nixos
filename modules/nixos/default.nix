@@ -1,6 +1,6 @@
 {
   docker = import ./docker.nix;
-  displaymanagers = import ./displaymanagers;
+  displaymanagers = import ./displaymanagers.nix;
   windowmanagers = import ./windowmanagers;
   gnome = import ./gnome.nix;
   grub = import ./grub.nix;

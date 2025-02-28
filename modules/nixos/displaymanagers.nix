@@ -5,10 +5,6 @@
 }: let
   cfg = config.displaymanagers;
 in {
-  imports = [
-    ./gdm.nix
-  ];
-
   options = {
     displaymanagers = {
       gdm = lib.mkEnableOption "Enable gdm module";
@@ -16,6 +12,14 @@ in {
   };
 
   config = {
-    gdm.enable = lib.mkIf (cfg.gdm) true;
+    services.xserver = lib.mkIf (cfg.gdm) {
+      enable = true;
+
+      displayManager = {
+        gdm = {
+          enable = true;
+        };
+      };
+    };
   };
 }
