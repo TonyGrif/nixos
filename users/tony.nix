@@ -43,7 +43,11 @@
   coding = {
     fonts = true;
     jetbrains = true;
-    nvim = true;
+    nvim = {
+      enable = true;
+      pluginRequirements = true;
+      lspRequirements = true;
+    };
   };
 
   waybar = {
