@@ -8,17 +8,14 @@
 
     ./hardware-configuration.nix
     outputs.nixosModules.grub
-    outputs.nixosModules.gdm
+    outputs.nixosModules.displaymanagers
+
+    outputs.nixosModules.hyprland
 
     outputs.nixosModules.pipewire
 
-    outputs.nixosModules.gnome
-    outputs.nixosModules.hyprland
-
     inputs.home-manager.nixosModules.home-manager
     ../users/tony.nix
-
-    outputs.nixosModules.vim
   ];
 
   networking = {
@@ -27,24 +24,15 @@
   };
 
   grub.enable = true;
-  gdm.enable = true;
+  displaymanagers.gdm = true;
 
-  pipewire.enable = true;
-
-  gnome.enable = true;
   hyprland = {
     enable = true;
     dolphin = false;
     wofi = false;
   };
 
-  vim.enable = true;
-
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs outputs;
-    };
-  };
+  pipewire.enable = true;
 
   system.stateVersion = "24.05";
 }

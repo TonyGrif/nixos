@@ -11,11 +11,9 @@
     outputs.nixosModules.displaymanagers
 
     outputs.nixosModules.gnome
-    outputs.nixosModules.windowmanagers
+    outputs.nixosModules.hyprland
 
     outputs.nixosModules.pipewire
-
-    outputs.nixosModules.hyprland
 
     outputs.nixosModules.docker
     outputs.nixosModules.ollama
@@ -37,15 +35,13 @@
   displaymanagers.gdm = true;
 
   gnome.enable = true;
-  windowmanagers.i3 = true;
-
-  pipewire.enable = true;
-
   hyprland = {
     enable = true;
     dolphin = false;
     wofi = false;
   };
+
+  pipewire.enable = true;
 
   docker.enable = true;
   ollama = {
