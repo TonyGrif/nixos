@@ -7,12 +7,9 @@
   imports = [
     ./globals.nix
 
-    outputs.homeManagerModules.fonts
     outputs.homeManagerModules.firefox
 
-    outputs.homeManagerModules.vscode
-    outputs.homeManagerModules.nvim
-    outputs.homeManagerModules.jetbrains
+    outputs.homeManagerModules.coding
 
     outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.waybar
@@ -24,7 +21,6 @@
   };
 
   programs.home-manager.enable = true;
-  fonts.enable = true;
 
   programs.bash = {
     enable = true;
@@ -44,9 +40,11 @@
 
   firefox.enable = true;
 
-  vscode.enable = true;
-  nvim.enable = true;
-  jetbrains.enable = true;
+  coding = {
+    fonts = true;
+    jetbrains = true;
+    nvim = true;
+  };
 
   waybar = {
     enable = true;
