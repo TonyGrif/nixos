@@ -10,6 +10,7 @@
     outputs.nixosModules.grub
     outputs.nixosModules.displaymanagers
 
+    outputs.nixosModules.windowManagers
     outputs.nixosModules.hyprland
 
     outputs.nixosModules.pipewire
@@ -25,6 +26,10 @@
 
   grub.enable = true;
   displaymanagers.gdm = true;
+
+  windowManagers = {
+    qtile = true;
+  };
 
   hyprland = {
     enable = true;

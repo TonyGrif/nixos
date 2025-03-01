@@ -77,6 +77,10 @@
 
   xdg = {
     enable = true;
+    configFile.qtile = {
+      source = ../dots/qtile;
+      recursive = true;
+    };
     configFile.nvim = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
       recursive = true;

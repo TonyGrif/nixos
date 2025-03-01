@@ -7,4 +7,5 @@
   ollama = import ./ollama.nix;
   pipewire = import ./pipewire.nix;
   virtmanager = import ./virtmanager.nix;
+  windowManagers = import ./windowManagers;
 }
