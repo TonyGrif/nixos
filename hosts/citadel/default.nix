@@ -12,7 +12,7 @@
 
     ./hardware-configuration.nix
     outputs.nixosModules.grub
-    outputs.nixosModules.displaymanagers
+    outputs.nixosModules.displayManagers
 
     outputs.nixosModules.gnome
     outputs.nixosModules.windowManagers

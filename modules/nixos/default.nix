@@ -1,6 +1,6 @@
 {
   docker = import ./docker.nix;
-  displaymanagers = import ./displayManagers;
+  displayManagers = import ./displayManagers;
   gnome = import ./gnome.nix;
   grub = import ./grub.nix;
   ollama = import ./ollama.nix;
