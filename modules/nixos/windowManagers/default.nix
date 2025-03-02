@@ -5,21 +5,17 @@
 }: let
   cfg = config.windowManagers;
 in {
+  imports = [
+    ./qtile.nix
+  ];
+
   options = {
     windowManagers = {
-      qtile = lib.mkEnableOption "Enable qtile";
+      qtile = lib.mkEnableOption "Enable qtile module";
     };
   };
 
   config = {
-    services.xserver = {
-      enable = true;
-
-      windowManager = {
-        qtile = lib.optionals (cfg.qtile) {
-          enable = true;
-        };
-      };
-    };
+    qtile.enable = lib.mkIf (cfg.qtile) true;
   };
 }
