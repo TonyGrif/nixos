@@ -10,8 +10,10 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
-    services.xserver = {
-      enable = true;
+    services = {
+      xserver = {
+        enable = true;
+      };
 
       displayManager = {
         ly = {
