@@ -4,6 +4,8 @@
   ...
 }: {
   imports = [
+    inputs.hardware.nixosModules.lenovo-thinkpad-x1-6th-gen
+
     ../globals.nix
 
     ./hardware-configuration.nix
@@ -11,7 +13,6 @@
     outputs.nixosModules.displaymanagers
 
     outputs.nixosModules.windowManagers
-    outputs.nixosModules.hyprland
 
     outputs.nixosModules.pipewire
 
@@ -25,16 +26,14 @@
   };
 
   grub.enable = true;
-  displaymanagers.gdm = true;
+  displaymanagers.gdm.enable = true;
 
   windowManagers = {
-    qtile = true;
-  };
-
-  hyprland = {
-    enable = true;
-    dolphin = false;
-    wofi = false;
+    qtile.enable = true;
+    hyprland = {
+      enable = true;
+      kitty = true;
+    };
   };
 
   pipewire.enable = true;
