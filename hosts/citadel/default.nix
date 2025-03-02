@@ -16,7 +16,6 @@
 
     outputs.nixosModules.gnome
     outputs.nixosModules.windowManagers
-    outputs.nixosModules.hyprland
 
     outputs.nixosModules.pipewire
 
@@ -41,13 +40,11 @@
 
   gnome.enable = true;
   windowManagers = {
-    qtile = true;
-  };
-
-  hyprland = {
-    enable = true;
-    dolphin = false;
-    wofi = false;
+    qtile.enable = true;
+    hyprland = {
+      enable = true;
+      kitty = true;
+    };
   };
 
   pipewire.enable = true;
