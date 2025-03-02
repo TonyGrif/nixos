@@ -26,7 +26,7 @@
   };
 
   grub.enable = true;
-  displaymanagers.gdm.enable = true;
+  displaymanagers.ly.enable = true;
 
   windowManagers = {
     qtile.enable = true;
