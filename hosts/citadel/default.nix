@@ -19,8 +19,7 @@
 
     outputs.nixosModules.pipewire
 
-    outputs.nixosModules.docker
-    outputs.nixosModules.ollama
+    outputs.nixosModules.containerServices
     outputs.nixosModules.virtmanager
 
     inputs.home-manager.nixosModules.home-manager
@@ -49,11 +48,11 @@
 
   pipewire.enable = true;
 
-  docker.enable = true;
-  ollama = {
-    enable = true;
-    webui = true;
+  containerServices = {
+    docker.enable = true;
+    ollama.enable = true;
   };
+
   virtmanager.enable = true;
 
   system.stateVersion = "24.05";

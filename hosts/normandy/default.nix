@@ -14,6 +14,8 @@
 
     outputs.nixosModules.windowManagers
 
+    outputs.nixosModules.containerServies
+
     outputs.nixosModules.pipewire
 
     inputs.home-manager.nixosModules.home-manager
@@ -35,6 +37,8 @@
       kitty = true;
     };
   };
+
+  containerServices.docker.enable = true;
 
   pipewire.enable = true;
 
