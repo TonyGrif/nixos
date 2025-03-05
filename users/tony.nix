@@ -10,6 +10,7 @@
     outputs.homeManagerModules.firefox
 
     outputs.homeManagerModules.coding
+    outputs.homeManagerModules.office
 
     outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.waybar
@@ -48,6 +49,10 @@
       pluginRequirements = true;
       lspRequirements = true;
     };
+  };
+
+  office = {
+    libreoffice.enable = true;
   };
 
   waybar = {
