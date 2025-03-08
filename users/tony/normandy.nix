@@ -42,7 +42,6 @@
 
   coding = {
     fonts = true;
-    jetbrains = true;
     nvim = {
       enable = true;
       pluginRequirements = true;
@@ -60,19 +59,16 @@
     discord
     spotify
     obsidian
-    zoom-us
 
     # Create separate modules
     pavucontrol
     yazi
     rofi-wayland
     wl-clipboard
-    tmux
   ];
 
   home = {
     file.".vimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.vimrc";
-    file.".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.tmux.conf";
   };
 
   xdg = {
