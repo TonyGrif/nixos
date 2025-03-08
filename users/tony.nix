@@ -11,6 +11,7 @@
 
     outputs.homeManagerModules.coding
     outputs.homeManagerModules.office
+    outputs.homeManagerModules.creative
 
     outputs.homeManagerModules.hyprpaper
     outputs.homeManagerModules.waybar
@@ -53,6 +54,10 @@
 
   office = {
     libreoffice.enable = true;
+  };
+
+  creative = {
+    pixelArt.enable = true;
   };
 
   waybar = {
