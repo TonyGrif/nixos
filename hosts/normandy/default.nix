@@ -17,7 +17,7 @@
     outputs.nixosModules.containerServies
 
     inputs.home-manager.nixosModules.home-manager
-    ../users/tony.nix
+    ./users.nix
   ];
 
   networking = {
