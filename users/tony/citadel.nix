@@ -88,7 +88,7 @@
   xdg = {
     enable = true;
     configFile.qtile = {
-      source = ../dots/qtile;
+      source = ../../dots/qtile;
       recursive = true;
     };
     configFile.nvim = {

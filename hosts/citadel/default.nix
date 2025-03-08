@@ -21,7 +21,7 @@
     outputs.nixosModules.virtmanager
 
     inputs.home-manager.nixosModules.home-manager
-    ../users/tony.nix
+    ./users.nix
   ];
 
   networking = {

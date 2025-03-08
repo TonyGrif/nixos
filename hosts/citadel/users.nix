@@ -16,5 +16,5 @@ in {
     packages = [pkgs.home-manager];
   };
 
-  home-manager.users.tony = import ../../users/tony.nix;
+  home-manager.users.tony = import ../../users/tony/citadel.nix;
 }
