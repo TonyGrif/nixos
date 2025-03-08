@@ -16,8 +16,6 @@
 
     outputs.nixosModules.containerServies
 
-    outputs.nixosModules.pipewire
-
     inputs.home-manager.nixosModules.home-manager
     ../users/tony.nix
   ];
@@ -39,8 +37,6 @@
   };
 
   containerServices.docker.enable = true;
-
-  pipewire.enable = true;
 
   system.stateVersion = "24.05";
 }

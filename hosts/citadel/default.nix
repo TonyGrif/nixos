@@ -17,8 +17,6 @@
     outputs.nixosModules.gnome
     outputs.nixosModules.windowManagers
 
-    outputs.nixosModules.pipewire
-
     outputs.nixosModules.containerServices
     outputs.nixosModules.virtmanager
 
@@ -45,8 +43,6 @@
       kitty = true;
     };
   };
-
-  pipewire.enable = true;
 
   containerServices = {
     docker.enable = true;
