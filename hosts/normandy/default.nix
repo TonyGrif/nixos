@@ -14,7 +14,7 @@
 
     outputs.nixosModules.windowManagers
 
-    outputs.nixosModules.containerServies
+    outputs.nixosModules.containerServices
 
     inputs.home-manager.nixosModules.home-manager
     ./users.nix
