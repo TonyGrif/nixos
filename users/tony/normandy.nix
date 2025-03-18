@@ -23,16 +23,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.bash = {
-    enable = true;
-    sessionVariables = {
-      EDITOR = "vim";
-    };
-    shellAliases = {
-      gs = "git status";
-      gl = "git log";
-    };
-  };
   programs.git = {
     enable = true;
     userName = "TonyGrif";
@@ -42,6 +32,10 @@
   firefox.enable = true;
 
   coding = {
+    bash = {
+      enable = true;
+      customization = true;
+    };
     fonts = true;
     nvim = {
       enable = true;
