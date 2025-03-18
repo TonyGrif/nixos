@@ -91,12 +91,12 @@
       source = ../../dots/qtile;
       recursive = true;
     };
-    configFile.nvim = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
+    configFile.hypr = {
+      source = ../../dots/wayland/hyprland;
       recursive = true;
     };
-    configFile.hypr = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/hypr/";
+    configFile.nvim = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
       recursive = true;
     };
     configFile.kitty = {

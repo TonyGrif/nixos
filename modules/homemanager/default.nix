@@ -3,6 +3,6 @@
   coding = import ./coding;
   office = import ./office;
   firefox = import ./firefox.nix;
-  hyprpaper = import ./hyprpaper.nix;
+  hyprlandUtils = import ./hyprlandUtils.nix;
   waybar = import ./waybar.nix;
 }

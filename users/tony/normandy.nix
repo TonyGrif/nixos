@@ -11,7 +11,8 @@
 
     outputs.homeManagerModules.coding
 
-    outputs.homeManagerModules.hyprpaper
+    outputs.homeManagerModules.hyprlandUtils
+
     outputs.homeManagerModules.waybar
   ];
 
@@ -49,11 +50,14 @@
     };
   };
 
+  hyprlandUtils = {
+    swww.enable = true;
+  };
+
   waybar = {
     enable = true;
     experimental = true;
   };
-  hyprpaper.enable = true;
 
   home.packages = with pkgs; [
     discord
@@ -73,16 +77,12 @@
 
   xdg = {
     enable = true;
-    configFile.qtile = {
-      source = ../../dots/qtile;
+    configFile.hypr = {
+      source = ../../dots/wayland/hyprland;
       recursive = true;
     };
     configFile.nvim = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
-      recursive = true;
-    };
-    configFile.hypr = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/hypr/";
       recursive = true;
     };
     configFile.kitty = {
