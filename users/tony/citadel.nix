@@ -13,7 +13,8 @@
     outputs.homeManagerModules.office
     outputs.homeManagerModules.creative
 
-    outputs.homeManagerModules.hyprpaper
+    outputs.homeManagerModules.hyprlandUtils
+
     outputs.homeManagerModules.waybar
   ];
 
@@ -24,16 +25,6 @@
 
   programs.home-manager.enable = true;
 
-  programs.bash = {
-    enable = true;
-    sessionVariables = {
-      EDITOR = "vim";
-    };
-    shellAliases = {
-      gs = "git status";
-      gl = "git log";
-    };
-  };
   programs.git = {
     enable = true;
     userName = "TonyGrif";
@@ -43,6 +34,10 @@
   firefox.enable = true;
 
   coding = {
+    bash = {
+      enable = true;
+      customization = true;
+    };
     fonts = true;
     jetbrains = true;
     nvim = {
@@ -60,11 +55,14 @@
     pixelArt.enable = true;
   };
 
+  hyprlandUtils = {
+    swww.enable = true;
+  };
+
   waybar = {
     enable = true;
     experimental = true;
   };
-  hyprpaper.enable = true;
 
   home.packages = with pkgs; [
     discord
