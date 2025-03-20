@@ -75,6 +75,10 @@
       source = ../../dots/wayland/hyprland;
       recursive = true;
     };
+    configFile.waybar = {
+      source = ../../dots/wayland/waybar;
+      recursive = true;
+    };
     configFile.nvim = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
       recursive = true;
@@ -85,10 +89,6 @@
     };
     configFile.rofi = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/rofi/";
-      recursive = true;
-    };
-    configFile.waybar = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/waybar/";
       recursive = true;
     };
   };
