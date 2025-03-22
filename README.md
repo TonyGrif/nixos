@@ -11,6 +11,7 @@ My NixOS configuration with flakes and home-manager support
 ## Project Structure
 ```
 flake.nix     # Configuration entry point
+dots/         # Configuration files for various applications
 hosts/        # NixOS configurations for my systems
 modules/      # Personally created modules
 overlays/     # Methods to extend and change nix packages
