@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 
 swww-daemon &&
-    swww img $HOME/Wallpapers/thelighthouse.png
+    swww img /home/tony/Wallpapers/escape_velocity.jpg
