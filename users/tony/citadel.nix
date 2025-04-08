@@ -14,8 +14,6 @@
     outputs.homeManagerModules.creative
 
     outputs.homeManagerModules.hyprlandUtils
-
-    outputs.homeManagerModules.waybar
   ];
 
   home = {
@@ -57,11 +55,7 @@
 
   hyprlandUtils = {
     swww.enable = true;
-  };
-
-  waybar = {
-    enable = true;
-    experimental = true;
+    waybar.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -76,6 +70,7 @@
     rofi-wayland
     wl-clipboard
     tmux
+    unstable.uv
   ];
 
   home = {
@@ -85,12 +80,16 @@
 
   xdg = {
     enable = true;
-    configFile.qtile = {
-      source = ../../dots/qtile;
-      recursive = true;
-    };
     configFile.hypr = {
       source = ../../dots/wayland/hyprland;
+      recursive = true;
+    };
+    configFile.waybar = {
+      source = ../../dots/wayland/waybar;
+      recursive = true;
+    };
+    configFile.qtile = {
+      source = ../../dots/qtile;
       recursive = true;
     };
     configFile.nvim = {
@@ -103,10 +102,6 @@
     };
     configFile.rofi = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/rofi/";
-      recursive = true;
-    };
-    configFile.waybar = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/waybar/";
       recursive = true;
     };
   };

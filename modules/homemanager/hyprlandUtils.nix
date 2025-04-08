@@ -9,6 +9,7 @@ in {
   options = {
     hyprlandUtils = {
       swww.enable = lib.mkEnableOption "Enable swww wallpaper";
+      waybar.enable = lib.mkEnableOption "Enable waybar";
     };
   };
 
@@ -17,6 +18,8 @@ in {
       []
       ++ lib.optionals (cfg.swww.enable) [
         swww
+      ] ++ lib.optionals (cfg.waybar.enable) [
+        waybar
       ];
   };
 }

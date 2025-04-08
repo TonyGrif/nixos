@@ -4,5 +4,4 @@
   office = import ./office;
   firefox = import ./firefox.nix;
   hyprlandUtils = import ./hyprlandUtils.nix;
-  waybar = import ./waybar.nix;
 }

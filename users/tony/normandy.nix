@@ -12,8 +12,6 @@
     outputs.homeManagerModules.coding
 
     outputs.homeManagerModules.hyprlandUtils
-
-    outputs.homeManagerModules.waybar
   ];
 
   home = {
@@ -46,11 +44,7 @@
 
   hyprlandUtils = {
     swww.enable = true;
-  };
-
-  waybar = {
-    enable = true;
-    experimental = true;
+    waybar.enable = true;
   };
 
   home.packages = with pkgs; [
