@@ -5,4 +5,5 @@
   grub = import ./grub.nix;
   virtmanager = import ./virtmanager.nix;
   windowManagers = import ./windowManagers;
+  gaming = import ./gaming.nix;
 }

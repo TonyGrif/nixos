@@ -11,6 +11,7 @@
     ../globals.nix
 
     ./hardware-configuration.nix
+
     outputs.nixosModules.grub
     outputs.nixosModules.displayManagers
 
@@ -19,6 +20,8 @@
 
     outputs.nixosModules.containerServices
     outputs.nixosModules.virtmanager
+
+    outputs.nixosModules.gaming
 
     inputs.home-manager.nixosModules.home-manager
     ./users.nix
@@ -53,6 +56,11 @@
   };
 
   virtmanager.enable = true;
+
+  gaming = {
+    enable = true;
+    amd = true;
+  };
 
   system.stateVersion = "24.05";
 }
