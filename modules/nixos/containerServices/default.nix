@@ -12,7 +12,14 @@ in {
   options = {
     containerServices = {
       docker.enable = lib.mkEnableOption "Enable Docker service for users in Docker group to use";
-      ollama.enable = lib.mkEnableOption "Enable ollama and tools systemd service";
+      ollama = {
+        enable = lib.mkEnableOption "Enable ollama and tools systemd service";
+        gpu = lib.mkOption {
+          type = lib.types.str;
+          default = "";
+          description = "GPU acceleration to enable";
+        };
+      };
     };
   };
 
@@ -25,6 +32,9 @@ in {
       };
     };
 
-    ollama.enable = lib.mkIf (cfg.ollama.enable) true;
+    ollama = {
+      enable = lib.mkIf (cfg.ollama.enable) true;
+      gpu = cfg.ollama.gpu;
+    };
   };
 }

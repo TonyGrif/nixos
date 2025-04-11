@@ -6,14 +6,21 @@
   cfg = config.ollama;
 in {
   options = {
-    ollama.enable = lib.mkEnableOption "Enable ollama and tools services";
+    ollama = {
+      enable = lib.mkEnableOption "Enable ollama and tools services";
+      gpu = lib.mkOption {
+        type = lib.types.str;
+        default = "";
+        description = "GPU acceleration to use";
+      };
+    };
   };
 
   config = lib.mkIf cfg.enable {
     services = {
       ollama = {
         enable = true;
-        # acceleration = ""
+        acceleration = cfg.gpu;
       };
       open-webui.enable = true;
     };

@@ -46,7 +46,10 @@
 
   containerServices = {
     docker.enable = true;
-    ollama.enable = true;
+    ollama = {
+      enable = true;
+      gpu = "rocm";
+    };
   };
 
   virtmanager.enable = true;
