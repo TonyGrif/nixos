@@ -10,6 +10,7 @@ in {
     ./fonts.nix
     ./jetbrains.nix
     ./nvim.nix
+    ./vscode.nix
   ];
 
   options = {
@@ -25,6 +26,7 @@ in {
         pluginRequirements = lib.mkEnableOption "Enable plugin requirements";
         lspRequirements = lib.mkEnableOption "Enable lsp requirements";
       };
+      vscode.enable = lib.mkEnableOption "Enable vscode";
     };
   };
 
@@ -40,5 +42,6 @@ in {
       pluginRequirements = lib.mkIf (cfg.nvim.pluginRequirements) true;
       lspRequirements = lib.mkIf (cfg.nvim.lspRequirements) true;
     };
+    vscode.enable = lib.mkIf (cfg.vscode.enable) true;
   };
 }

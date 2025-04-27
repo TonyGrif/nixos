@@ -18,7 +18,8 @@ in {
       []
       ++ lib.optionals (cfg.swww.enable) [
         swww
-      ] ++ lib.optionals (cfg.waybar.enable) [
+      ]
+      ++ lib.optionals (cfg.waybar.enable) [
         waybar
       ];
   };

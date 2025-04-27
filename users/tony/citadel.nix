@@ -43,6 +43,7 @@
       pluginRequirements = true;
       lspRequirements = true;
     };
+    vscode.enable = true;
   };
 
   office = {
@@ -89,7 +90,7 @@
       recursive = true;
     };
     configFile.waybar = {
-      source = ../../dots/wayland/waybar;
+      source = config.lib.file.mkOutOfStoreSymlink "/home/nixos/dots/wayland/waybar";
       recursive = true;
     };
     configFile.qtile = {
