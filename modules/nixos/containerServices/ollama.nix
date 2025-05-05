@@ -10,7 +10,7 @@ in {
       enable = lib.mkEnableOption "Enable ollama and tools services";
       gpu = lib.mkOption {
         type = lib.types.str;
-        default = "";
+        default = null;
         description = "GPU acceleration to use";
       };
     };
