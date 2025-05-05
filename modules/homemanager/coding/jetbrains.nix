@@ -8,13 +8,19 @@
 in {
   options = {
     jetbrains = {
-      enable = lib.mkEnableOption "Enable jetbrains IDEs";
+      idea = lib.mkEnableOption "Enable jetbrains intellij";
+      pycharm = lib.mkEnableOption "Enable jetbrains pycharm";
     };
   };
 
-  config = lib.mkIf cfg.enable {
-    home.packages = with pkgs; [
-      jetbrains.idea-community
-    ];
+  config = {
+    home.packages = with pkgs;
+      []
+      ++ lib.optionals (cfg.idea) [
+        jetbrains.idea-community
+      ]
+      ++ lib.optionals (cfg.pycharm) [
+        jetbrains.pycharm-community
+      ];
   };
 }

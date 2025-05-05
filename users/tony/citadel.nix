@@ -37,7 +37,9 @@
       customization = true;
     };
     fonts = true;
-    jetbrains = true;
+    jetbrains = {
+      pycharm = true;
+    };
     nvim = {
       enable = true;
       pluginRequirements = true;

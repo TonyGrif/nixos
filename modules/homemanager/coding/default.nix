@@ -20,7 +20,10 @@ in {
         customization = lib.mkEnableOption "Enable bash prompt customizations";
       };
       fonts = lib.mkEnableOption "Enable coding fonts module";
-      jetbrains = lib.mkEnableOption "Enable JetBrains IDEs";
+      jetbrains = {
+        idea = lib.mkEnableOption "Enable jetbrains intellij";
+        pycharm = lib.mkEnableOption "Enable jetbrains pycharm";
+      };
       nvim = {
         enable = lib.mkEnableOption "Enable neovim module";
         pluginRequirements = lib.mkEnableOption "Enable plugin requirements";
@@ -36,7 +39,10 @@ in {
       customization = lib.mkIf (cfg.bash.customization) true;
     };
     fonts.enable = lib.mkIf (cfg.fonts) true;
-    jetbrains.enable = lib.mkIf (cfg.jetbrains) true;
+    jetbrains = {
+      idea = lib.mkIf (cfg.jetbrains.idea) true;
+      pycharm = lib.mkIf (cfg.jetbrains.pycharm) true;
+    };
     nvim = {
       enable = lib.mkIf (cfg.nvim.enable) true;
       pluginRequirements = lib.mkIf (cfg.nvim.pluginRequirements) true;
