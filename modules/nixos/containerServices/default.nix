@@ -16,7 +16,7 @@ in {
         enable = lib.mkEnableOption "Enable ollama and tools systemd service";
         gpu = lib.mkOption {
           type = lib.types.str;
-          default = "";
+          default = null;
           description = "GPU acceleration to enable";
         };
       };
