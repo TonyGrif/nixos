@@ -1,9 +1,10 @@
 {
-  displayManagers = import ./displaymanagers.nix;
-  containerServices = import ./containerServices;
-  gnome = import ./gnome.nix;
   grub = import ./grub.nix;
-  virtmanager = import ./virtmanager.nix;
+  displayManagers = import ./displaymanagers.nix;
+
+  gnome = import ./gnome.nix;
   windowManagers = import ./windowManagers;
+  containerServices = import ./containerServices;
+  virtmanager = import ./virtmanager.nix;
   gaming = import ./gaming.nix;
 }
