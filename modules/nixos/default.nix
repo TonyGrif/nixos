@@ -1,5 +1,5 @@
 {
-  displayManagers = import ./displayManagers;
+  displayManagers = import ./displaymanagers.nix;
   containerServices = import ./containerServices;
   gnome = import ./gnome.nix;
   grub = import ./grub.nix;
