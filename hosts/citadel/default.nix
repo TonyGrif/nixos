@@ -16,7 +16,7 @@
     outputs.nixosModules.displayManagers
 
     outputs.nixosModules.desktopEnvironments
-    outputs.nixosModules.windowManagers
+    outputs.nixosModules.windowManagers # TODO: Clean up this module
 
     outputs.nixosModules.containerServices
     outputs.nixosModules.virtmanager
@@ -55,6 +55,7 @@
     ollama = {
       enable = true;
       gpu = "rocm";
+      webui = true;
     };
   };
 
