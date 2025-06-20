@@ -17,7 +17,7 @@ in {
       xserver = {
         enable = true;
 
-        displayManager =  {
+        displayManager = {
           gdm = lib.mkIf (cfg.gdm.enable) {
             enable = true;
           };

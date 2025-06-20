@@ -15,7 +15,7 @@
     outputs.nixosModules.grub
     outputs.nixosModules.displayManagers
 
-    outputs.nixosModules.gnome
+    outputs.nixosModules.desktopEnvironments
     outputs.nixosModules.windowManagers
 
     outputs.nixosModules.containerServices
@@ -38,7 +38,7 @@
   };
   displayManagers.gdm.enable = true;
 
-  gnome.enable = true;
+  desktopEnvironments.gnome.enable = true;
   windowManagers = {
     qtile.enable = true;
     hyprland = {

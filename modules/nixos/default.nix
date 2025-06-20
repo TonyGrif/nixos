@@ -1,8 +1,8 @@
 {
   grub = import ./grub.nix;
   displayManagers = import ./displaymanagers.nix;
+  desktopEnvironments = import ./desktopEnvironments.nix;
 
-  gnome = import ./gnome.nix;
   windowManagers = import ./windowManagers;
   containerServices = import ./containerServices;
   virtmanager = import ./virtmanager.nix;
