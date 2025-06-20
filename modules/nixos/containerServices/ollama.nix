@@ -13,7 +13,7 @@ in {
         default = null;
         description = "GPU acceleration to use";
       };
-	webui = lib.mkEnableOption "Enable open-webui to compliment ollama";
+      webui = lib.mkEnableOption "Enable open-webui to compliment ollama";
     };
   };
 
