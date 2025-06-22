@@ -19,7 +19,7 @@
     outputs.nixosModules.windowManagers # TODO: Clean up this module
 
     outputs.nixosModules.containerServices
-    outputs.nixosModules.virtmanager
+    outputs.nixosModules.virtmanager # TODO: Look into this setup more
 
     outputs.nixosModules.gaming
 
@@ -43,7 +43,6 @@
 
   desktopEnvironments.gnome.enable = true;
   windowManagers = {
-    qtile.enable = true;
     hyprland = {
       enable = true;
       kitty = true;

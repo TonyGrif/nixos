@@ -12,7 +12,6 @@ in {
 
   options = {
     windowManagers = {
-      qtile.enable = lib.mkEnableOption "Enable qtile module";
       hyprland = {
         enable = lib.mkEnableOption "Enable hyprland module";
         kitty = lib.mkEnableOption "Enable kitty terminal";
@@ -23,7 +22,6 @@ in {
   };
 
   config = {
-    qtile.enable = lib.mkIf (cfg.qtile.enable) true;
     hyprland = {
       enable = lib.mkIf (cfg.hyprland.enable) true;
       kitty = lib.mkIf (cfg.hyprland.kitty) true;
