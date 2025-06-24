@@ -21,7 +21,7 @@ in {
 
   config = {
     services = {
-      xserver = {
+      xserver = lib.mkIf (cfg.gdm.enable) {
         enable = true;
 
         displayManager = {
