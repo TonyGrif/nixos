@@ -6,7 +6,6 @@
   cfg = config.windowManagers;
 in {
   imports = [
-    ./qtile.nix
     ./hyprland.nix
   ];
 

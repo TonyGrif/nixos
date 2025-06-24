@@ -15,7 +15,8 @@ in {
   };
 
   config = {
-    services.xserver = {
+    # TODO: Only enable x server if any desktop env is choosen
+    services.xserver = lib.mkIf (cfg.gnome.enable) {
       enable = true;
       desktopManager.gnome.enable = lib.optionals (cfg.gnome.enable) true;
     };
