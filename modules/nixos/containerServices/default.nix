@@ -33,8 +33,8 @@ in {
       };
     };
 
-    ollama = {
-      enable = lib.mkIf (cfg.ollama.enable) true;
+    ollama = lib.mkIf (cfg.ollama.enable) {
+      enable = true;
       gpu = cfg.ollama.gpu;
       webui = cfg.ollama.webui;
     };
