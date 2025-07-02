@@ -16,12 +16,12 @@
     outputs.nixosModules.displayManagers
 
     outputs.nixosModules.desktopEnvironments
-    outputs.nixosModules.windowManagers # TODO: Clean up this module
+    outputs.nixosModules.windowManagers
 
     outputs.nixosModules.containerServices
     outputs.nixosModules.virtmanager # TODO: Look into this setup more
 
-    outputs.nixosModules.gaming
+    outputs.nixosModules.gaming # TODO: Complete this module
 
     inputs.home-manager.nixosModules.home-manager
     ./users.nix

@@ -29,7 +29,6 @@
   displayManagers.ly.enable = true;
 
   windowManagers = {
-    qtile.enable = true;
     hyprland = {
       enable = true;
       kitty = true;
