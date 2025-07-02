@@ -9,7 +9,6 @@ in {
     isNormalUser = true;
     extraGroups = ifTheyExist [
       "docker"
-      "libvirtd"
       "networkmanager"
       "wheel"
     ];

@@ -19,8 +19,6 @@
     outputs.nixosModules.windowManagers
 
     outputs.nixosModules.containerServices
-    outputs.nixosModules.virtmanager # TODO: Look into this setup more
-
     outputs.nixosModules.gaming # TODO: Complete this module
 
     inputs.home-manager.nixosModules.home-manager
@@ -57,8 +55,6 @@
       webui = true;
     };
   };
-
-  virtmanager.enable = true;
 
   gaming = {
     enable = true;
