@@ -7,13 +7,14 @@
   imports = [
     ./globals.nix
 
+    outputs.homeManagerModules.hyprland
+
     outputs.homeManagerModules.browsers
 
     outputs.homeManagerModules.coding
     outputs.homeManagerModules.office
     outputs.homeManagerModules.creative
 
-    outputs.homeManagerModules.hyprlandUtils
   ];
 
   home = {
@@ -27,6 +28,11 @@
     enable = true;
     userName = "TonyGrif";
     userEmail = "TonyGriffin2000@gmail.com";
+  };
+
+  hyprland = {
+    swww.enable = true;
+    waybar.enable = true;
   };
 
   browsers = {
@@ -61,11 +67,6 @@
     pixelArt.enable = true;
   };
 
-  hyprlandUtils = {
-    swww.enable = true;
-    waybar.enable = true;
-  };
-
   home.packages = with pkgs; [
     discord
     spotify
@@ -98,10 +99,6 @@
     };
     configFile.waybar = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/nixos/dots/wayland/waybar";
-      recursive = true;
-    };
-    configFile.qtile = {
-      source = ../../dots/qtile;
       recursive = true;
     };
     configFile.nvim = {
