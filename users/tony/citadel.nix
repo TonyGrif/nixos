@@ -7,7 +7,7 @@
   imports = [
     ./globals.nix
 
-    outputs.homeManagerModules.firefox
+    outputs.homeManagerModules.browsers
 
     outputs.homeManagerModules.coding
     outputs.homeManagerModules.office
@@ -29,7 +29,13 @@
     userEmail = "TonyGriffin2000@gmail.com";
   };
 
-  firefox.enable = true;
+  browsers = {
+    chromium = {
+      enable = true;
+      extensions = true;
+    };
+    firefox.enable = true;
+  };
 
   coding = {
     bash = {
@@ -42,8 +48,7 @@
     };
     nvim = {
       enable = true;
-      pluginRequirements = true;
-      lspRequirements = true;
+      config.enable = true;
     };
     vscode.enable = true;
   };
@@ -77,8 +82,8 @@
   ];
 
   home = {
-    file.".vimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.vimrc";
-    file.".tmux.conf".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.tmux.conf";
+    file.".ideavimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/nixos/dots/.ideavimrc";
+    file.".vimrc".source = config.lib.file.mkOutOfStoreSymlink "/home/tony/nixos/dots/.vimrc";
   };
 
   xdg = {
