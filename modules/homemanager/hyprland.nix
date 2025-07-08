@@ -4,10 +4,10 @@
   pkgs,
   ...
 }: let
-  cfg = config.hyprlandUtils;
+  cfg = config.hyprland;
 in {
   options = {
-    hyprlandUtils = {
+    hyprland = {
       swww.enable = lib.mkEnableOption "Enable swww wallpaper";
       waybar.enable = lib.mkEnableOption "Enable waybar";
     };
@@ -17,10 +17,10 @@ in {
     home.packages = with pkgs;
       []
       ++ lib.optionals (cfg.swww.enable) [
-        swww
+        #swww
       ]
       ++ lib.optionals (cfg.waybar.enable) [
-        waybar
+        #waybar
       ];
   };
 }

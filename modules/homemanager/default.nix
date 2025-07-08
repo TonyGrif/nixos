@@ -3,5 +3,5 @@
   creative = import ./creative;
   coding = import ./coding;
   office = import ./office;
-  hyprlandUtils = import ./hyprlandUtils.nix;
+  hyprland = import ./hyprland.nix;
 }
