@@ -14,7 +14,6 @@
     outputs.homeManagerModules.coding
     outputs.homeManagerModules.office
     outputs.homeManagerModules.creative
-
   ];
 
   home = {
@@ -90,7 +89,7 @@
   xdg = {
     enable = true;
     configFile.hypr = {
-      source = ../../dots/wayland/hyprland;
+      source = ../../dots/hyprland;
       recursive = true;
     };
     configFile.kitty = {
