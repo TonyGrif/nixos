@@ -7,11 +7,12 @@
   imports = [
     ./globals.nix
 
-    outputs.homeManagerModules.firefox
+    outputs.homeManagerModules.hyprland
+
+    outputs.homeManagerModules.browsers
 
     outputs.homeManagerModules.coding
-
-    outputs.homeManagerModules.hyprlandUtils
+    outputs.homeManagerModules.office
   ];
 
   home = {
@@ -27,7 +28,18 @@
     userEmail = "TonyGriffin2000@gmail.com";
   };
 
-  firefox.enable = true;
+  hyprland = {
+    swww.enable = true;
+    waybar.enable = true;
+  };
+
+  browsers = {
+    chromium = {
+      enable = true;
+      extensions = true;
+    };
+    firefox.enable = true;
+  };
 
   coding = {
     bash = {
@@ -40,11 +52,6 @@
       pluginRequirements = true;
       lspRequirements = true;
     };
-  };
-
-  hyprlandUtils = {
-    swww.enable = true;
-    waybar.enable = true;
   };
 
   home.packages = with pkgs; [
@@ -66,7 +73,11 @@
   xdg = {
     enable = true;
     configFile.hypr = {
-      source = ../../dots/wayland/hyprland;
+      source = ../../dots/hyprland;
+      recursive = true;
+    };
+    configFile.kitty = {
+      source = ../../dots/wayland/kitty;
       recursive = true;
     };
     configFile.waybar = {
@@ -75,10 +86,6 @@
     };
     configFile.nvim = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
-      recursive = true;
-    };
-    configFile.kitty = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/kitty/";
       recursive = true;
     };
     configFile.rofi = {
