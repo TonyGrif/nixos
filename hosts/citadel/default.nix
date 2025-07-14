@@ -13,10 +13,10 @@
     ./hardware-configuration.nix
 
     outputs.nixosModules.grub
-    outputs.nixosModules.displayManagers
+    outputs.nixosModules.gdm
 
-    outputs.nixosModules.desktopEnvironments
-    outputs.nixosModules.windowManagers
+    outputs.nixosModules.gnome
+    outputs.nixosModules.hyprland
 
     outputs.nixosModules.containerServices
     outputs.nixosModules.gaming # TODO: Complete this module
@@ -34,17 +34,15 @@
     enable = true;
     dualboot = true;
   };
-  displayManagers.gdm = {
+  gdm = {
     enable = true;
     suspend = false;
   };
 
-  desktopEnvironments.gnome.enable = true;
-  windowManagers = {
-    hyprland = {
-      enable = true;
-      kitty = true;
-    };
+  gnome.enable = true;
+  hyprland = {
+    enable = true;
+    kitty = true;
   };
 
   containerServices = {

@@ -1,8 +1,9 @@
 {
   grub = import ./grub.nix;
-  displayManagers = import ./displaymanagers.nix;
-  desktopEnvironments = import ./desktopEnvironments.nix;
-  windowManagers = import ./windowManagers;
+  gdm = import ./displayManagers/gdm.nix;
+  ly = import ./displayManagers/ly.nix;
+  gnome = import ./gnome.nix;
+  hyprland = import ./hyprland.nix;
   containerServices = import ./containerServices;
 
   gaming = import ./gaming.nix;

@@ -10,9 +10,9 @@
 
     ./hardware-configuration.nix
     outputs.nixosModules.grub
-    outputs.nixosModules.displayManagers
+    outputs.nixosModules.ly
 
-    outputs.nixosModules.windowManagers
+    outputs.nixosModules.hyprland
 
     outputs.nixosModules.containerServices
 
@@ -26,13 +26,11 @@
   };
 
   grub.enable = true;
-  displayManagers.ly.enable = true;
+  ly.enable = true;
 
-  windowManagers = {
-    hyprland = {
-      enable = true;
-      kitty = true;
-    };
+  hyprland = {
+    enable = true;
+    kitty = true;
   };
 
   containerServices.docker.enable = true;
