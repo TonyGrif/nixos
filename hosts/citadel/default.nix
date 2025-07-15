@@ -13,7 +13,7 @@
     ./hardware-configuration.nix
 
     outputs.nixosModules.grub
-    outputs.nixosModules.gdm
+    outputs.nixosModules.displayManagers
 
     outputs.nixosModules.gnome
     outputs.nixosModules.hyprland
@@ -34,7 +34,7 @@
     enable = true;
     dualboot = true;
   };
-  gdm = {
+  displayManagers.gdm = {
     enable = true;
     suspend = false;
   };

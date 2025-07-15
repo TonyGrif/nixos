@@ -10,7 +10,7 @@
 
     ./hardware-configuration.nix
     outputs.nixosModules.grub
-    outputs.nixosModules.ly
+    outputs.nixosModules.displayManagers
 
     outputs.nixosModules.hyprland
 
@@ -26,7 +26,7 @@
   };
 
   grub.enable = true;
-  ly.enable = true;
+  displayManagers.ly.enable = true;
 
   hyprland = {
     enable = true;
