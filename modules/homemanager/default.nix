@@ -1,4 +1,5 @@
 {
+  gnome = import ./gnome.nix;
   browsers = import ./browsers.nix;
   creative = import ./creative;
   coding = import ./coding;

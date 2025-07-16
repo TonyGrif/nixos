@@ -7,6 +7,7 @@
   imports = [
     ./globals.nix
 
+    outputs.homeManagerModules.gnome
     outputs.homeManagerModules.hyprland
 
     outputs.homeManagerModules.browsers
@@ -29,9 +30,12 @@
     userEmail = "TonyGriffin2000@gmail.com";
   };
 
+  gnome = {
+    keybindings = true;
+  };
+
   hyprland = {
-    swww.enable = true;
-    waybar.enable = true;
+    enable = true;
   };
 
   browsers = {
@@ -53,7 +57,8 @@
     };
     nvim = {
       enable = true;
-      config.enable = true;
+      pluginRequirements = true;
+      lspRequirements = true;
     };
     vscode.enable = true;
   };
@@ -72,11 +77,12 @@
     obsidian
     zoom-us
 
-    # Create separate modules
-    pavucontrol
-    yazi
-    rofi-wayland
-    wl-clipboard
+    pavucontrol # Audio
+    yazi # TUI File Manager
+    rofi-wayland # App launcher
+    wl-clipboard # Clip
+    grim # Screenshots
+
     tmux
     unstable.uv
   ];
@@ -88,10 +94,6 @@
 
   xdg = {
     enable = true;
-    configFile.hypr = {
-      source = ../../dots/hyprland;
-      recursive = true;
-    };
     configFile.kitty = {
       source = ../../dots/wayland/kitty;
       recursive = true;
