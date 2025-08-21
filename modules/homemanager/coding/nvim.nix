@@ -31,11 +31,8 @@ in {
         ripgrep
       ]
       ++ lib.optionals (cfg.lspRequirements) [
-        gnumake
-        cargo
-        python3
-        nodejs
-        go
+        lua-language-server
+        pyright
       ];
   };
 }
