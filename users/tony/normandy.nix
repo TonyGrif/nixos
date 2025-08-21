@@ -7,6 +7,7 @@
   imports = [
     ./globals.nix
 
+    outputs.homeManagerModules.gnome
     outputs.homeManagerModules.hyprland
 
     outputs.homeManagerModules.browsers
@@ -28,6 +29,9 @@
     userEmail = "TonyGriffin2000@gmail.com";
   };
 
+  gnome = {
+    keybindings = true;
+  };
   hyprland = {
     swww.enable = true;
     waybar.enable = true;

@@ -12,6 +12,7 @@
     outputs.nixosModules.grub
     outputs.nixosModules.displayManagers
 
+    outputs.nixosModules.gnome
     outputs.nixosModules.hyprland
 
     outputs.nixosModules.containerServices
@@ -28,6 +29,7 @@
   grub.enable = true;
   displayManagers.ly.enable = true;
 
+  gnome.enable = true;
   hyprland = {
     enable = true;
     kitty = true;
