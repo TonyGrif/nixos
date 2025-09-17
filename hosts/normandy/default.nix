@@ -13,6 +13,7 @@
     outputs.nixosModules.displayManagers
 
     outputs.nixosModules.gnome
+    outputs.nixosModules.i3
     outputs.nixosModules.hyprland
 
     outputs.nixosModules.containerServices
@@ -30,6 +31,7 @@
   displayManagers.ly.enable = true;
 
   gnome.enable = true;
+  i3.enable = true;
   hyprland = {
     enable = true;
     kitty = true;
