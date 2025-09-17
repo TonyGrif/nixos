@@ -1,6 +1,7 @@
 {
   grub = import ./grub.nix;
-  displayManagers = ./displayManagers;
+  gdm = import ./displayManagers/gdm.nix;
+  ly = import ./displayManagers/ly.nix;
   gnome = import ./gnome.nix;
   i3 = import ./windowManagers/i3.nix;
   hyprland = import ./hyprland.nix;

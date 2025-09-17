@@ -10,7 +10,7 @@
 
     ./hardware-configuration.nix
     outputs.nixosModules.grub
-    outputs.nixosModules.displayManagers
+    outputs.nixosModules.ly
 
     outputs.nixosModules.gnome
     outputs.nixosModules.i3
@@ -28,7 +28,7 @@
   };
 
   grub.enable = true;
-  displayManagers.ly.enable = true;
+  ly.enable = true;
 
   gnome.enable = true;
   i3.enable = true;
