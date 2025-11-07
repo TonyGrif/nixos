@@ -16,7 +16,7 @@
     outputs.nixosModules.gdm
 
     outputs.nixosModules.gnome
-    outputs.nixosModules.hyprland
+    outputs.nixosModules.windowManagers
 
     outputs.nixosModules.containerServices
     outputs.nixosModules.gaming # TODO: Complete this module
@@ -40,9 +40,14 @@
   };
 
   gnome.enable = true;
-  hyprland = {
-    enable = true;
-    kitty = true;
+  windowMangers = {
+    i3 = {
+      enable = true;
+    };
+    hyprland = {
+      enable = true;
+      kitty = true;
+    };
   };
 
   containerServices = {
