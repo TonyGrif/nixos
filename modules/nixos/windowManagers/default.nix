@@ -28,9 +28,9 @@ in {
     };
     hyprland = lib.mkIf (cfg.hyprland.enable) {
       enable = true;
-      kitty = lib.mkIf (cfg.kitty.enable) true;
-      dolphin = lib.mkIf (cfg.dolphin.enable) true;
-      wofi = lib.mkIf (cfg.wofi.enable) true;
+      kitty = lib.mkIf (cfg.hyprland.kitty) true;
+      dolphin = lib.mkIf (cfg.hyprland.dolphin) true;
+      wofi = lib.mkIf (cfg.hyprland.wofi) true;
     };
   };
 }

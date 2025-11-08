@@ -5,6 +5,4 @@
   gnome = import ./gnome.nix;
   windowManagers = import ./windowManagers;
   containerServices = import ./containerServices;
-
-  gaming = import ./gaming.nix;
 }
