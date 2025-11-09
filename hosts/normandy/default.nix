@@ -13,8 +13,7 @@
     outputs.nixosModules.ly
 
     outputs.nixosModules.gnome
-    outputs.nixosModules.i3
-    outputs.nixosModules.hyprland
+    outputs.nixosModules.windowManagers
 
     outputs.nixosModules.containerServices
 
@@ -31,10 +30,12 @@
   ly.enable = true;
 
   gnome.enable = true;
-  i3.enable = true;
-  hyprland = {
-    enable = true;
-    kitty = true;
+  windowMangers = {
+    i3.enable = true;
+    hyprland = {
+      enable = true;
+      kitty = true;
+    };
   };
 
   containerServices.docker.enable = true;
