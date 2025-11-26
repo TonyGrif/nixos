@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   cfg = config.coding;
@@ -30,6 +31,7 @@ in {
         lspRequirements = lib.mkEnableOption "Enable lsp requirements";
       };
       vscode.enable = lib.mkEnableOption "Enable vscode";
+      claude.enable = lib.mkEnableOption "Enable claude code";
     };
   };
 
@@ -49,5 +51,11 @@ in {
       lspRequirements = lib.mkIf (cfg.nvim.lspRequirements) true;
     };
     vscode.enable = lib.mkIf (cfg.vscode.enable) true;
+
+    home.packages = with pkgs;
+      []
+      ++ lib.optionals (cfg.claude.enable) [
+        claude-code
+      ];
   };
 }

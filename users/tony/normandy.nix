@@ -56,9 +56,11 @@
       pluginRequirements = true;
       lspRequirements = true;
     };
+    claude.enable = true;
   };
 
   home.packages = with pkgs; [
+    tmux
     discord
     spotify
     obsidian
