@@ -4,18 +4,20 @@
   pkgs,
   ...
 }: let
-  cfg = config.hyprland;
+  cfg = config.windowManagers;
 in {
   options = {
-    hyprland = {
-      enable = lib.mkEnableOption "Enable hyprland module";
-      kitty = lib.mkEnableOption "Enable kitty terminal";
-      dolphin = lib.mkEnableOption "Enable dolphin file manager";
-      wofi = lib.mkEnableOption "Enable wofi launcher";
+    windowManagers = {
+      hyprland = {
+        enable = lib.mkEnableOption "Enable hyprland module";
+        kitty = lib.mkEnableOption "Enable kitty terminal";
+        dolphin = lib.mkEnableOption "Enable dolphin file manager";
+        wofi = lib.mkEnableOption "Enable wofi launcher";
+      };
     };
   };
 
-  config = lib.mkIf cfg.enable {
+  config = lib.mkIf cfg.hyprland.enable {
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -34,13 +36,13 @@ in {
 
     environment.systemPackages = with pkgs;
       []
-      ++ lib.optionals (cfg.kitty) [
+      ++ lib.optionals (cfg.hyprland.kitty) [
         kitty
       ]
-      ++ lib.optionals (cfg.dolphin) [
+      ++ lib.optionals (cfg.hyprland.dolphin) [
         libsForQt5.dolphin
       ]
-      ++ lib.optionals (cfg.wofi) [
+      ++ lib.optionals (cfg.hyprland.wofi) [
         wofi
       ];
   };

@@ -1,8 +1,7 @@
 {
-  grub = import ./grub.nix;
-  gdm = import ./displayManagers/gdm.nix;
-  ly = import ./displayManagers/ly.nix;
-  gnome = import ./gnome.nix;
-  windowManagers = import ./windowManagers;
-  containerServices = import ./containerServices;
+  bootloaders = import ./bootloaders.nix;
+  displayManagers = import ./displayManagers.nix;
+  desktopManagers = import ./desktopManagers.nix;
+  windowManagers = import ./windowManagers.nix;
+  services = import ./services.nix;
 }

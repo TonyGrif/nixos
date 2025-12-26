@@ -12,14 +12,11 @@
 
     ./hardware-configuration.nix
 
-    outputs.nixosModules.grub
-    outputs.nixosModules.gdm
-
-    outputs.nixosModules.gnome
+    outputs.nixosModules.bootloaders
+    outputs.nixosModules.displayManagers
+    outputs.nixosModules.desktopManagers
     outputs.nixosModules.windowManagers
-
-    outputs.nixosModules.containerServices
-    outputs.nixosModules.gaming # TODO: Complete this module
+    outputs.nixosModules.services
 
     inputs.home-manager.nixosModules.home-manager
     ./users.nix
@@ -30,38 +27,33 @@
     networkmanager.enable = true;
   };
 
-  grub = {
-    enable = true;
-    dualboot = true;
-  };
-  gdm = {
-    enable = true;
-    suspend = false;
+  bootloaders = {
+    grub = {
+      enable = true;
+      dualboot = true;
+    };
   };
 
-  gnome.enable = true;
-  windowMangers = {
-    i3 = {
+  displayManagers= {
+    gdm = {
       enable = true;
+      suspend = false;
     };
+  };
+
+  desktopManagers = {
+    gnome.enable = true;
+  };
+
+  windowManagers = {
     hyprland = {
       enable = true;
       kitty = true;
     };
   };
 
-  containerServices = {
+  services = {
     docker.enable = true;
-    ollama = {
-      enable = true;
-      gpu = "rocm";
-      webui = true;
-    };
-  };
-
-  gaming = {
-    enable = true;
-    amd = true;
   };
 
   system.stateVersion = "24.05";
