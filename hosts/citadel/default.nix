@@ -34,7 +34,7 @@
     };
   };
 
-  displayManagers= {
+  displayManagers = {
     gdm = {
       enable = true;
       suspend = false;
