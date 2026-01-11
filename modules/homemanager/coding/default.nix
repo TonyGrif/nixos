@@ -10,7 +10,6 @@ in {
     ./bash.nix
     ./fonts.nix
     ./jetbrains.nix
-    ./nvim.nix
     ./vscode.nix
   ];
 
@@ -24,11 +23,6 @@ in {
       jetbrains = {
         idea = lib.mkEnableOption "Enable jetbrains intellij";
         pycharm = lib.mkEnableOption "Enable jetbrains pycharm";
-      };
-      nvim = {
-        enable = lib.mkEnableOption "Enable neovim module";
-        pluginRequirements = lib.mkEnableOption "Enable plugin requirements";
-        lspRequirements = lib.mkEnableOption "Enable lsp requirements";
       };
       vscode.enable = lib.mkEnableOption "Enable vscode";
       claude.enable = lib.mkEnableOption "Enable claude code";
@@ -44,11 +38,6 @@ in {
     jetbrains = {
       idea = lib.mkIf (cfg.jetbrains.idea) true;
       pycharm = lib.mkIf (cfg.jetbrains.pycharm) true;
-    };
-    nvim = {
-      enable = lib.mkIf (cfg.nvim.enable) true;
-      pluginRequirements = lib.mkIf (cfg.nvim.pluginRequirements) true;
-      lspRequirements = lib.mkIf (cfg.nvim.lspRequirements) true;
     };
     vscode.enable = lib.mkIf (cfg.vscode.enable) true;
 
