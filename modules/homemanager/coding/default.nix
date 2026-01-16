@@ -10,7 +10,6 @@ in {
     ./bash.nix
     ./fonts.nix
     ./jetbrains.nix
-    ./vscode.nix
   ];
 
   options = {
@@ -24,7 +23,6 @@ in {
         idea = lib.mkEnableOption "Enable jetbrains intellij";
         pycharm = lib.mkEnableOption "Enable jetbrains pycharm";
       };
-      vscode.enable = lib.mkEnableOption "Enable vscode";
       claude.enable = lib.mkEnableOption "Enable claude code";
     };
   };
@@ -39,7 +37,6 @@ in {
       idea = lib.mkIf (cfg.jetbrains.idea) true;
       pycharm = lib.mkIf (cfg.jetbrains.pycharm) true;
     };
-    vscode.enable = lib.mkIf (cfg.vscode.enable) true;
 
     home.packages = with pkgs;
       []

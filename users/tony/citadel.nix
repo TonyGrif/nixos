@@ -7,14 +7,13 @@
   imports = [
     ./globals.nix
 
+    outputs.homeManagerModules.browsers
+    outputs.homeManagerModules.textEditors
+
     outputs.homeManagerModules.gnome
     outputs.homeManagerModules.hyprland
 
-    outputs.homeManagerModules.browsers
-
     outputs.homeManagerModules.coding
-    outputs.homeManagerModules.office
-    outputs.homeManagerModules.creative
   ];
 
   home = {
@@ -30,20 +29,31 @@
     userEmail = "TonyGriffin2000@gmail.com";
   };
 
-  gnome = {
-    keybindings = true;
-  };
-
-  hyprland = {
-    enable = true;
-  };
-
   browsers = {
     chromium = {
       enable = true;
       extensions = true;
     };
     firefox.enable = true;
+  };
+
+  textEditors = {
+    nvim = {
+      enable = true;
+      pluginRequirements = true;
+      lspRequirements = true;
+    };
+    vscode = {
+      enable = true;
+    };
+  };
+
+  gnome = {
+    keybindings = true;
+  };
+
+  hyprland = {
+    enable = true;
   };
 
   coding = {
@@ -55,23 +65,10 @@
     jetbrains = {
       pycharm = true;
     };
-    nvim = {
-      enable = true;
-      pluginRequirements = true;
-      lspRequirements = true;
-    };
-    vscode.enable = true;
-  };
-
-  office = {
-    libreoffice.enable = true;
-  };
-
-  creative = {
-    pixelArt.enable = true;
   };
 
   home.packages = with pkgs; [
+    libreoffice-fresh
     discord
     spotify
     obsidian
@@ -85,6 +82,9 @@
 
     tmux
     unstable.uv
+    conda
+
+    termusic
   ];
 
   home = {
