@@ -8,6 +8,9 @@
 in {
   options = {
     windowManagers = {
+      niri = {
+        enable = lib.mkEnableOption "Enable niri window manager";
+      };
       hyprland = {
         enable = lib.mkEnableOption "Enable hyprland module";
         kitty = lib.mkEnableOption "Enable kitty terminal";
@@ -17,8 +20,12 @@ in {
     };
   };
 
-  config = lib.mkIf cfg.hyprland.enable {
-    programs.hyprland = {
+  config = {
+    programs.niri = lib.mkIf (cfg.hyprland.enable) {
+      enable = true;
+    };
+
+    programs.hyprland = lib.mkIf (cfg.hyprland.enable) {
       enable = true;
       xwayland.enable = true;
     };
