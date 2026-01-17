@@ -17,6 +17,7 @@
     outputs.nixosModules.desktopManagers
     outputs.nixosModules.windowManagers
     outputs.nixosModules.services
+    outputs.nixosModules.gaming
 
     inputs.home-manager.nixosModules.home-manager
     ./users.nix
@@ -54,6 +55,12 @@
 
   services = {
     docker.enable = true;
+  };
+
+  gaming = {
+    emulation = {
+      retroarch.enable = true;
+    };
   };
 
   system.stateVersion = "24.05";

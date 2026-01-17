@@ -4,4 +4,5 @@
   desktopManagers = import ./desktopManagers.nix;
   windowManagers = import ./windowManagers.nix;
   services = import ./services.nix;
+  gaming = import ./gaming.nix;
 }
