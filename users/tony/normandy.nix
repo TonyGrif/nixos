@@ -68,7 +68,7 @@
     # Create separate modules
     pavucontrol
     yazi
-    rofi-wayland
+    rofi
     wl-clipboard
   ];
 

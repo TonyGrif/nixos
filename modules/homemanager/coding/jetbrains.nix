@@ -20,7 +20,7 @@ in {
         jetbrains.idea-community
       ]
       ++ lib.optionals (cfg.pycharm) [
-        jetbrains.pycharm-community
+        # jetbrains.pycharm
       ];
   };
 }

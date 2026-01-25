@@ -23,17 +23,15 @@ in {
 
   config = {
     services = {
-      xserver = {
-        displayManager = {
-          gdm = lib.mkIf (cfg.gdm.enable) {
-            enable = true;
-            wayland = true;
-            autoSuspend = cfg.gdm.suspend;
-          };
+      displayManager = {
+        gdm = lib.mkIf (cfg.gdm.enable) {
+          enable = true;
+          wayland = true;
+          autoSuspend = cfg.gdm.suspend;
         };
-      };
-      displayManager = lib.mkIf (cfg.ly.enable) {
-        ly.enable = true;
+        ly = lib.mkIf (cfg.ly.enable) {
+          enable = true;
+        };
       };
     };
   };

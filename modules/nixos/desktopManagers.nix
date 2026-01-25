@@ -15,9 +15,8 @@ in {
   };
 
   config = {
-    services.xserver = lib.mkIf (cfg.gnome.enable) {
+    services.desktopManager.gnome = lib.mkIf (cfg.gnome.enable) {
       enable = true;
-      desktopManager.gnome.enable = true;
     };
   };
 }

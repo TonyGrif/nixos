@@ -24,8 +24,10 @@
 
   programs.git = {
     enable = true;
-    userName = "TonyGrif";
-    userEmail = "TonyGriffin2000@gmail.com";
+    settings.user = {
+      name = "TonyGrif";
+      email = "TonyGriffin2000@gmail.com";
+    };
   };
 
   browsers = {
@@ -71,7 +73,7 @@
 
     pavucontrol # Audio
     yazi # TUI File Manager
-    rofi-wayland # App launcher
+    rofi # App launcher
     wl-clipboard # Clip
     grim # Screenshots
 
