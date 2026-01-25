@@ -24,19 +24,27 @@
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 
     nixosConfigurations = {
-      # Desktop
       "citadel" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/citadel
         ];
       };
-      # Laptop
       "normandy" = nixpkgs.lib.nixosSystem {
         specialArgs = {inherit inputs outputs;};
         modules = [
           ./hosts/normandy
         ];
+      };
+    };
+
+    homeConfigurations = {
+      "tony@citadel" = home-manager.lib.homeManagerConfiguration {
+        modules = [./users/tony/citadel.nix];
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
       };
     };
   };
