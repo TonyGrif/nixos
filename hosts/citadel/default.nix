@@ -47,9 +47,6 @@
   };
 
   windowManagers = {
-    niri = {
-      enable = true;
-    };
     hyprland = {
       enable = true;
       kitty = true;

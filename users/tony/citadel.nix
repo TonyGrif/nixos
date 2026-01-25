@@ -11,7 +11,6 @@
     outputs.homeManagerModules.textEditors
 
     outputs.homeManagerModules.gnome
-    outputs.homeManagerModules.hyprland
 
     outputs.homeManagerModules.coding
   ];
@@ -52,10 +51,6 @@
     keybindings = true;
   };
 
-  hyprland = {
-    enable = true;
-  };
-
   coding = {
     bash = {
       enable = true;
@@ -94,20 +89,8 @@
 
   xdg = {
     enable = true;
-    configFile.kitty = {
-      source = ../../dots/wayland/kitty;
-      recursive = true;
-    };
-    configFile.waybar = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/nixos/dots/wayland/waybar";
-      recursive = true;
-    };
     configFile.nvim = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
-      recursive = true;
-    };
-    configFile.rofi = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/rofi/";
       recursive = true;
     };
   };

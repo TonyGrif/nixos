@@ -20,6 +20,9 @@ in {
         gl = "git log";
       };
       initExtra = lib.optionals (cfg.customization) "eval \"$(starship init bash)\"";
+      bashrcExtra = ''
+        export PATH="$HOME/.local/bin:$PATH"
+      '';
     };
     programs.starship = lib.optionals (cfg.customization) {
       enable = true;
