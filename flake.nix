@@ -46,6 +46,13 @@
           inherit inputs outputs;
         };
       };
+      "tony@normandy" = home-manager.lib.homeManagerConfiguration {
+        modules = [./users/tony/normandy.nix];
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = {
+          inherit inputs outputs;
+        };
+      };
     };
   };
 }

@@ -7,13 +7,12 @@
   imports = [
     ./globals.nix
 
+    outputs.homeManagerModules.textEditors
     outputs.homeManagerModules.gnome
-    outputs.homeManagerModules.hyprland
 
     outputs.homeManagerModules.browsers
 
     outputs.homeManagerModules.coding
-    outputs.homeManagerModules.office
   ];
 
   home = {
@@ -25,16 +24,13 @@
 
   programs.git = {
     enable = true;
-    userName = "TonyGrif";
-    userEmail = "TonyGriffin2000@gmail.com";
+    settings.user = {
+      name = "TonyGrif";
+      email = "TonyGriffin2000@gmail.com";
+    };
   };
-
   gnome = {
     keybindings = true;
-  };
-  hyprland = {
-    swww.enable = true;
-    waybar.enable = true;
   };
 
   browsers = {
@@ -45,17 +41,23 @@
     firefox.enable = true;
   };
 
+  textEditors = {
+    nvim = {
+      enable = true;
+      pluginRequirements = true;
+      lspRequirements = true;
+    };
+    vscode = {
+      enable = true;
+    };
+  };
+
   coding = {
     bash = {
       enable = true;
       customization = true;
     };
     fonts = true;
-    nvim = {
-      enable = true;
-      pluginRequirements = true;
-      lspRequirements = true;
-    };
     claude.enable = true;
   };
 
@@ -78,24 +80,8 @@
 
   xdg = {
     enable = true;
-    configFile.hypr = {
-      source = ../../dots/hyprland;
-      recursive = true;
-    };
-    configFile.kitty = {
-      source = ../../dots/wayland/kitty;
-      recursive = true;
-    };
-    configFile.waybar = {
-      source = ../../dots/wayland/waybar;
-      recursive = true;
-    };
     configFile.nvim = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/tony/GriffiNvim";
-      recursive = true;
-    };
-    configFile.rofi = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/tony/dotfiles/.config/rofi/";
       recursive = true;
     };
   };

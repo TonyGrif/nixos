@@ -41,7 +41,7 @@
     gnome.enable = true;
   };
 
-  windowMangers = {
+  windowManagers = {
     hyprland = {
       enable = true;
       kitty = true;
