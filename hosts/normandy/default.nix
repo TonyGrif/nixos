@@ -9,13 +9,12 @@
     ../globals.nix
 
     ./hardware-configuration.nix
-    outputs.nixosModules.grub
-    outputs.nixosModules.ly
 
-    outputs.nixosModules.gnome
+    outputs.nixosModules.bootloaders
+    outputs.nixosModules.displayManagers
+    outputs.nixosModules.desktopManagers
     outputs.nixosModules.windowManagers
-
-    outputs.nixosModules.containerServices
+    outputs.nixosModules.services
 
     inputs.home-manager.nixosModules.home-manager
     ./users.nix
@@ -26,19 +25,32 @@
     networkmanager.enable = true;
   };
 
-  grub.enable = true;
-  ly.enable = true;
+  bootloaders = {
+    grub = {
+      enable = true;
+    };
+  };
 
-  gnome.enable = true;
+  displayManagers = {
+    ly = {
+      enable = true;
+    };
+  };
+
+  desktopManagers = {
+    gnome.enable = true;
+  };
+
   windowMangers = {
-    i3.enable = true;
     hyprland = {
       enable = true;
       kitty = true;
     };
   };
 
-  containerServices.docker.enable = true;
+  services = {
+    docker.enable = true;
+  };
 
   system.stateVersion = "24.05";
 }
