@@ -7,6 +7,7 @@
   cfg = config.coding;
 in {
   imports = [
+    ./textEditors.nix
     ./bash.nix
     ./fonts.nix
     ./jetbrains.nix

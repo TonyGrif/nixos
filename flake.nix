@@ -19,7 +19,7 @@
   in {
     overlays = import ./overlays {inherit inputs;};
     nixosModules = ./modules/nixos;
-    homeManagerModules = import ./modules/homemanager;
+    homeManagerModules = ./modules/homemanager;
 
     formatter.x86_64-linux = nixpkgs.legacyPackages.x86_64-linux.alejandra;
 

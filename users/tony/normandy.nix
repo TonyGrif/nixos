@@ -5,14 +5,7 @@
   ...
 }: {
   imports = [
-    ./globals.nix
-
-    outputs.homeManagerModules.textEditors
-    outputs.homeManagerModules.gnome
-
-    outputs.homeManagerModules.browsers
-
-    outputs.homeManagerModules.coding
+    outputs.homeManagerModules
   ];
 
   home = {
