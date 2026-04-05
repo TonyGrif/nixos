@@ -14,5 +14,4 @@ in {
     ];
     packages = [pkgs.home-manager];
   };
-
 }

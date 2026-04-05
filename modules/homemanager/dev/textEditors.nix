@@ -37,10 +37,11 @@ in {
       enable = true;
       package = pkgs.unstable.neovim-unwrapped;
       plugins = lib.optionals (cfg.nvim.pluginRequirements) [
-        (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
-          lua
-          luadoc
-        ]))
+        (pkgs.vimPlugins.nvim-treesitter.withPlugins (p:
+          with p; [
+            lua
+            luadoc
+          ]))
       ];
     };
 
