@@ -33,14 +33,23 @@ in {
       # profiles.default.extensions = with pkgs.vscode-extensions [];
     };
 
+    programs.neovim = lib.mkIf (cfg.nvim.enable) {
+      enable = true;
+      package = pkgs.unstable.neovim-unwrapped;
+      plugins = lib.optionals (cfg.nvim.pluginRequirements) [
+        (pkgs.vimPlugins.nvim-treesitter.withPlugins (p: with p; [
+          lua
+          luadoc
+        ]))
+      ];
+    };
+
     home.packages = with pkgs;
       []
-      ++ lib.optionals (cfg.nvim.enable) [
-        unstable.neovim
-      ]
       ++ lib.optionals (cfg.nvim.enable && cfg.nvim.pluginRequirements) [
         gcc
         ripgrep
+        tree-sitter
       ]
       ++ lib.optionals (cfg.nvim.enable && cfg.nvim.lspRequirements) [
         lua-language-server
