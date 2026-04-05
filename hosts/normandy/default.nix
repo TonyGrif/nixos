@@ -6,16 +6,9 @@
   imports = [
     inputs.hardware.nixosModules.lenovo-thinkpad-x1-6th-gen
 
-    ../globals.nix
+    outputs.nixosModules
 
     ./hardware-configuration.nix
-
-    outputs.nixosModules.bootloaders
-    outputs.nixosModules.displayManagers
-    outputs.nixosModules.desktopManagers
-    outputs.nixosModules.windowManagers
-    outputs.nixosModules.services
-
     ./users.nix
   ];
 

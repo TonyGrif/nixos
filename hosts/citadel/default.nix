@@ -8,17 +8,9 @@
     inputs.hardware.nixosModules.common-gpu-amd
     inputs.hardware.nixosModules.common-pc-ssd
 
-    ../globals.nix
+    outputs.nixosModules
 
     ./hardware-configuration.nix
-
-    outputs.nixosModules.bootloaders
-    outputs.nixosModules.displayManagers
-    outputs.nixosModules.desktopManagers
-    outputs.nixosModules.windowManagers
-    outputs.nixosModules.services
-    outputs.nixosModules.gaming
-
     ./users.nix
   ];
 

@@ -63,5 +63,4 @@ in {
       defaultEditor = true;
     };
   };
-
 }
