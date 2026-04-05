@@ -64,9 +64,4 @@ in {
     };
   };
 
-  home-manager = {
-    extraSpecialArgs = {
-      inherit inputs outputs;
-    };
-  };
 }

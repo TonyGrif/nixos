@@ -19,7 +19,6 @@
     outputs.nixosModules.services
     outputs.nixosModules.gaming
 
-    inputs.home-manager.nixosModules.home-manager
     ./users.nix
   ];
 

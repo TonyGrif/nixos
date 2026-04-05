@@ -16,7 +16,6 @@
     outputs.nixosModules.windowManagers
     outputs.nixosModules.services
 
-    inputs.home-manager.nixosModules.home-manager
     ./users.nix
   ];
 
