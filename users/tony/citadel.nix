@@ -75,6 +75,7 @@
     conda
 
     termusic
+    texliveFull
   ];
 
   home = {

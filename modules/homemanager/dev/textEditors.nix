@@ -37,10 +37,12 @@ in {
       enable = true;
       package = pkgs.unstable.neovim-unwrapped;
       plugins = lib.optionals (cfg.nvim.pluginRequirements) [
-        (pkgs.vimPlugins.nvim-treesitter.withPlugins (p:
+        (pkgs.unstable.vimPlugins.nvim-treesitter.withPlugins (p:
           with p; [
             lua
             luadoc
+            latex
+            markdown
           ]))
       ];
     };
@@ -54,7 +56,7 @@ in {
       ]
       ++ lib.optionals (cfg.nvim.enable && cfg.nvim.lspRequirements) [
         lua-language-server
-        pyright
+        texlab
       ];
   };
 }
