@@ -17,7 +17,7 @@ in {
     };
   };
 
-  config = lib.mkIf (cfg.hyprland.enable) {
+  config = lib.mkIf cfg.hyprland.enable {
     programs.hyprland = {
       enable = true;
       xwayland.enable = true;
@@ -31,7 +31,7 @@ in {
 
     xdg.portal = {
       enable = true;
-      extraPortals = [pkgs.xdg-desktop-portal-gtk];
+      extraPortals = [pkgs.xdg-desktop-portal-hyprland pkgs.xdg-desktop-portal-gtk];
     };
 
     environment.systemPackages = with pkgs;
@@ -40,7 +40,7 @@ in {
         kitty
       ]
       ++ lib.optionals (cfg.hyprland.dolphin) [
-        libsForQt5.dolphin
+        kdePackages.dolphin
       ]
       ++ lib.optionals (cfg.hyprland.wofi) [
         wofi
