@@ -63,6 +63,7 @@
     jetbrains = {
       pycharm = true;
     };
+    codex.enable = true;
   };
 
   home.packages = with pkgs; [

@@ -25,6 +25,7 @@ in {
         pycharm = lib.mkEnableOption "Enable jetbrains pycharm";
       };
       claude.enable = lib.mkEnableOption "Enable claude code";
+      codex.enable = lib.mkEnableOption "Enable codex";
     };
   };
 
@@ -43,6 +44,9 @@ in {
       []
       ++ lib.optionals (cfg.claude.enable) [
         claude-code
+      ]
+      ++ lib.optionals (cfg.codex.enable) [
+        codex
       ];
   };
 }
