@@ -21,24 +21,26 @@ in {
   config = lib.mkIf cfg.enable {
     home.packages = [
       inputs.noctalia-shell.packages.${pkgs.system}.default
+      pkgs.rofi
     ];
+
+    xdg.portal = {
+      enable = true;
+      config.hyprland.default = ["hyprland" "gtk"];
+    };
 
     wayland.windowManager.hyprland = {
       enable = true;
       package = null; # installed at system level via windowManagers.hyprland
 
       settings = {
-        # ── Startup ────────────────────────────────────────────────────────────
         exec-once = [
           "noctalia"
         ];
 
-        # ── Monitor ────────────────────────────────────────────────────────────
         # Syntax: "name, resolution@hz, position, scale"
-        # Override via hyprland.monitors in your host config
         monitor = cfg.monitors;
 
-        # ── Input ──────────────────────────────────────────────────────────────
         input = {
           kb_layout = "us";
           follow_mouse = 1;
@@ -47,7 +49,6 @@ in {
           };
         };
 
-        # ── General ────────────────────────────────────────────────────────────
         general = {
           gaps_in = 4;
           gaps_out = 8;
@@ -55,7 +56,6 @@ in {
           layout = "dwindle";
         };
 
-        # ── Decoration ─────────────────────────────────────────────────────────
         decoration = {
           rounding = 8;
           blur = {
@@ -65,24 +65,21 @@ in {
           };
         };
 
-        # ── Animations ─────────────────────────────────────────────────────────
         animations = {
           enabled = true;
         };
 
-        # ── Layouts ────────────────────────────────────────────────────────────
         dwindle = {
           pseudotile = true;
           preserve_split = true;
         };
 
-        # ── Keybindings ────────────────────────────────────────────────────────
         "$mod" = "SUPER";
 
         bind = [
           # Launchers
           "$mod, Return, exec, kitty"
-          "$mod, Space, exec, wofi --show drun"
+          "$mod, Space, exec, rofi -show drun"
           "$mod, Q, killactive"
           "$mod, F, fullscreen"
           "$mod, V, togglefloating"

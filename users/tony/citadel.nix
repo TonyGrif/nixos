@@ -46,6 +46,14 @@
     keybindings = true;
   };
 
+  hyprland = {
+    enable = true;
+  };
+
+  kitty = {
+    enable = true;
+  };
+
   coding = {
     bash = {
       enable = true;
@@ -66,7 +74,6 @@
 
     pavucontrol # Audio
     yazi # TUI File Manager
-    rofi # App launcher
     wl-clipboard # Clip
     grim # Screenshots
 
