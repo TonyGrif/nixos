@@ -19,15 +19,14 @@ in {
   };
 
   config = lib.mkIf cfg.enable {
+    # Portals are configured at the NixOS (system) level for both GNOME and Hyprland.
+    # Disable HM's portal module to avoid duplicate user portal configuration/warnings.
+    xdg.portal.enable = lib.mkForce false;
+
     home.packages = [
       inputs.noctalia-shell.packages.${pkgs.system}.default
       pkgs.rofi
     ];
-
-    xdg.portal = {
-      enable = true;
-      config.hyprland.default = ["hyprland" "gtk"];
-    };
 
     wayland.windowManager.hyprland = {
       enable = true;

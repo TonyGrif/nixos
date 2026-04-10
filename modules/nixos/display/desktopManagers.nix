@@ -19,6 +19,12 @@ in {
       enable = true;
     };
 
+    xdg.portal = lib.mkIf (cfg.gnome.enable) {
+      enable = true;
+      extraPortals = [pkgs.xdg-desktop-portal-gnome];
+      configPackages = [pkgs.gnome-session];
+    };
+
     environment.systemPackages = with pkgs;
       []
       ++ lib.optionals (cfg.gnome.enable) [

@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   cfg = config.browsers;
@@ -21,6 +22,8 @@ in {
     programs = {
       firefox = {
         enable = cfg.firefox.enable;
+        # Required for Wayland screen sharing (PipeWire screencast).
+        package = lib.mkIf cfg.firefox.enable (pkgs.wrapFirefox (pkgs.firefox-unwrapped.override {pipewireSupport = true;}) {});
       };
       chromium = lib.mkIf (cfg.chromium.enable) {
         enable = true;
