@@ -51,7 +51,7 @@
       customization = true;
     };
     fonts = true;
-    claude.enable = true;
+    codex.enable = true;
   };
 
   home.packages = with pkgs; [
