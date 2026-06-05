@@ -11,6 +11,7 @@ in {
       "docker"
       "networkmanager"
       "wheel"
+      "input"
     ];
     packages = [pkgs.home-manager];
   };
