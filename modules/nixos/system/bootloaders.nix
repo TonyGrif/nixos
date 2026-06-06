@@ -24,6 +24,7 @@ in {
         enable = true;
         efiSupport = true;
         device = "nodev";
+        configurationLimit = 10;
         useOSProber = lib.mkIf (cfg.grub.dualboot) true;
       };
       systemd-boot.enable = false;
