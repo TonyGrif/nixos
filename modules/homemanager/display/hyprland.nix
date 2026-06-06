@@ -8,6 +8,7 @@
   cfg = config.hyprland;
   noctalia = inputs.noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default;
   noctaliaCmd = lib.getExe noctalia;
+  wpctl = lib.getExe' pkgs.wireplumber "wpctl";
   wallpaperDir = "${config.home.homeDirectory}/Pictures/Wallpapers";
 in {
   imports = [
@@ -149,6 +150,18 @@ in {
 
           # Screenshot
           "$mod, P, exec, grimblast copy area"
+        ];
+
+        bindel = [
+          # Audio
+          ", XF86AudioRaiseVolume, exec, ${wpctl} set-volume -l 1.5 @DEFAULT_AUDIO_SINK@ 5%+"
+          ", XF86AudioLowerVolume, exec, ${wpctl} set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+        ];
+
+        bindl = [
+          # Audio
+          ", XF86AudioMute, exec, ${wpctl} set-mute @DEFAULT_AUDIO_SINK@ toggle"
+          ", XF86AudioMicMute, exec, ${wpctl} set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
         ];
 
         bindm = [
