@@ -43,6 +43,8 @@ in {
             luadoc
             latex
             markdown
+            python
+            toml
           ]))
       ];
     };
@@ -57,6 +59,7 @@ in {
       ++ lib.optionals (cfg.nvim.enable && cfg.nvim.lspRequirements) [
         lua-language-server
         texlab
+        pyright
       ];
   };
 }

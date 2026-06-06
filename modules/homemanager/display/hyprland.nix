@@ -72,6 +72,10 @@ in {
           };
         };
 
+        cursor = {
+          inactive_timeout = 5;
+        };
+
         general = {
           gaps_in = 4;
           gaps_out = 8;
@@ -102,7 +106,7 @@ in {
         bind = [
           # Launchers
           "$mod, Space, exec, kitty"
-          "$mod, Return, exec, ${noctaliaCmd} ipc call launcher toggle"
+          "$mod, D, exec, ${noctaliaCmd} ipc call launcher toggle"
           "$mod SHIFT, S, exec, ${noctaliaCmd} ipc call settings toggle"
           "$mod, C, exec, ${noctaliaCmd} ipc call controlCenter toggle"
           "$mod, N, exec, ${noctaliaCmd} ipc call notifications toggleHistory"
