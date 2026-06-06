@@ -1,6 +1,7 @@
 {
   lib,
   config,
+  pkgs,
   ...
 }: let
   cfg = config.services;
@@ -14,8 +15,10 @@ in {
   config = {
     virtualisation.docker = lib.mkIf (cfg.docker.enable) {
       enable = true;
+      package = pkgs.docker_29;
       rootless = {
         enable = true;
+        package = pkgs.docker_29;
         setSocketVariable = true;
       };
     };
