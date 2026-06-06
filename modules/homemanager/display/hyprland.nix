@@ -6,7 +6,14 @@
   ...
 }: let
   cfg = config.hyprland;
+  noctalia = inputs.noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  noctaliaCmd = lib.getExe noctalia;
+  wallpaperDir = "${config.home.homeDirectory}/Pictures/Wallpapers";
 in {
+  imports = [
+    inputs.noctalia-shell.homeModules.default
+  ];
+
   options = {
     hyprland = {
       enable = lib.mkEnableOption "Enable hyprland home-manager module";
@@ -23,10 +30,28 @@ in {
     # Disable HM's portal module to avoid duplicate user portal configuration/warnings.
     xdg.portal.enable = lib.mkForce false;
 
-    home.packages = [
-      inputs.noctalia-shell.packages.${pkgs.system}.default
-      pkgs.rofi
-    ];
+    programs.noctalia-shell = {
+      enable = true;
+      systemd.enable = false;
+
+      settings = {
+        appLauncher = {
+          overviewLayer = true;
+        };
+        bar = {
+          displayMode = "always_visible";
+          position = "top";
+        };
+        wallpaper = {
+          enabled = true;
+          directory = wallpaperDir;
+        };
+      };
+    };
+
+    home.activation.createNoctaliaWallpaperDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
+      mkdir -p ${lib.escapeShellArg wallpaperDir}
+    '';
 
     wayland.windowManager.hyprland = {
       enable = true;
@@ -34,10 +59,9 @@ in {
 
       settings = {
         exec-once = [
-          "noctalia"
+          noctaliaCmd
         ];
 
-        # Syntax: "name, resolution@hz, position, scale"
         monitor = cfg.monitors;
 
         input = {
@@ -77,8 +101,13 @@ in {
 
         bind = [
           # Launchers
-          "$mod, Return, exec, kitty"
-          "$mod, Space, exec, rofi -show drun"
+          "$mod, Space, exec, kitty"
+          "$mod, Return, exec, ${noctaliaCmd} ipc call launcher toggle"
+          "$mod SHIFT, S, exec, ${noctaliaCmd} ipc call settings toggle"
+          "$mod, C, exec, ${noctaliaCmd} ipc call controlCenter toggle"
+          "$mod, N, exec, ${noctaliaCmd} ipc call notifications toggleHistory"
+          "$mod, M, exec, ${noctaliaCmd} ipc call sessionMenu toggle"
+          "$mod, W, exec, ${noctaliaCmd} ipc call wallpaper toggle"
           "$mod, Q, killactive"
           "$mod, F, fullscreen"
           "$mod, V, togglefloating"
@@ -94,6 +123,12 @@ in {
           "$mod SHIFT, L, movewindow, r"
           "$mod SHIFT, K, movewindow, u"
           "$mod SHIFT, J, movewindow, d"
+
+          # Resize windows
+          "$mod CTRL, H, resizeactive, -40 0"
+          "$mod CTRL, L, resizeactive, 40 0"
+          "$mod CTRL, K, resizeactive, 0 -40"
+          "$mod CTRL, J, resizeactive, 0 40"
 
           # Workspaces
           "$mod, 1, workspace, 1"
