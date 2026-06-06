@@ -48,6 +48,9 @@
 
   hyprland = {
     enable = true;
+    monitors = [
+      "DP-3, 3840x2160@144, 0x0, 2"
+    ];
   };
 
   kitty = {
@@ -84,6 +87,7 @@
 
     termusic
     texliveFull
+    rpcs3
   ];
 
   home = {

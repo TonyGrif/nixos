@@ -46,7 +46,7 @@ in {
         claude-code
       ]
       ++ lib.optionals (cfg.codex.enable) [
-        codex
+        unstable.codex
       ];
   };
 }
