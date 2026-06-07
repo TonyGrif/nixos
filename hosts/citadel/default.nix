@@ -49,11 +49,9 @@
   };
 
   gaming = {
+    steam.enable = true;
     controllers = {
       xone.enable = true;
-    };
-    emulation = {
-      retroarch.enable = true;
     };
   };
 

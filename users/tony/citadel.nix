@@ -57,6 +57,8 @@
     enable = true;
   };
 
+  emulation.enable = true;
+
   coding = {
     bash = {
       enable = true;
@@ -87,7 +89,6 @@
 
     termusic
     texliveFull
-    rpcs3
   ];
 
   home = {

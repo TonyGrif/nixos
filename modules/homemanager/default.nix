@@ -4,5 +4,6 @@
     ./apps
     ./display
     ./dev
+    ./gaming
   ];
 }

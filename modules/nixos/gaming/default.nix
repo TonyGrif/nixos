@@ -1,7 +1,6 @@
 {
   lib,
   config,
-  pkgs,
   ...
 }: let
   cfg = config.gaming;
@@ -12,11 +11,6 @@ in {
       controllers = {
         xone.enable = lib.mkEnableOption "Enable Xbox controller support";
       };
-      emulation = {
-        retroarch = {
-          enable = lib.mkEnableOption "Enable retroarch";
-        };
-      };
     };
   };
 
@@ -26,15 +20,6 @@ in {
       remotePlay.openFirewall = true;
       localNetworkGameTransfers.openFirewall = true;
     };
-
-    environment.systemPackages = with pkgs;
-      []
-      ++ lib.optionals (cfg.emulation.retroarch.enable) [
-        (retroarch.withCores (cores:
-          with cores; [
-            sameboy # Gameboy
-          ]))
-      ];
 
     hardware.xone.enable = cfg.controllers.xone.enable;
     hardware.xpadneo.enable = cfg.controllers.xone.enable;
