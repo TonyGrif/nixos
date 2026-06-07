@@ -49,6 +49,9 @@
   };
 
   gaming = {
+    controllers = {
+      xone.enable = true;
+    };
     emulation = {
       retroarch.enable = true;
     };
