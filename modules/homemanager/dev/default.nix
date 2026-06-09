@@ -43,7 +43,7 @@ in {
     home.packages = with pkgs;
       []
       ++ lib.optionals (cfg.claude.enable) [
-        claude-code
+        unstable.claude-code
       ]
       ++ lib.optionals (cfg.codex.enable) [
         unstable.codex

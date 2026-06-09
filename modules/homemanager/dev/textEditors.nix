@@ -45,6 +45,7 @@ in {
             markdown
             python
             toml
+            yaml
           ]))
       ];
     };

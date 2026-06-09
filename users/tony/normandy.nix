@@ -62,6 +62,7 @@
       customization = true;
     };
     fonts = true;
+    claude.enable = true;
     codex.enable = true;
   };
 
