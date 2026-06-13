@@ -35,6 +35,9 @@ in {
 
     programs.neovim = lib.mkIf (cfg.nvim.enable) {
       enable = true;
+      sideloadInitLua = true;
+      withRuby = false;
+      withPython3 = false;
       package = pkgs.unstable.neovim-unwrapped;
       plugins = lib.optionals (cfg.nvim.pluginRequirements) [
         (pkgs.unstable.vimPlugins.nvim-treesitter.withPlugins (p:

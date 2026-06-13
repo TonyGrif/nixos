@@ -26,7 +26,6 @@ in {
       displayManager = {
         gdm = lib.mkIf (cfg.gdm.enable) {
           enable = true;
-          wayland = true;
           autoSuspend = cfg.gdm.suspend;
         };
         ly = lib.mkIf (cfg.ly.enable) {

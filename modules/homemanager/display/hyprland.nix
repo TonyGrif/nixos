@@ -32,7 +32,7 @@ in {
     # Disable HM's portal module to avoid duplicate user portal configuration/warnings.
     xdg.portal.enable = lib.mkForce false;
 
-    programs.noctalia-shell = {
+    programs.noctalia = {
       enable = true;
       systemd.enable = false;
 
@@ -57,6 +57,7 @@ in {
 
     wayland.windowManager.hyprland = {
       enable = true;
+      configType = "hyprlang";
       package = null; # installed at system level via windowManagers.hyprland
 
       settings = {
@@ -99,7 +100,6 @@ in {
         };
 
         dwindle = {
-          pseudotile = true;
           preserve_split = true;
         };
 
@@ -108,12 +108,12 @@ in {
         bind = [
           # Launchers
           "$mod, Space, exec, kitty"
-          "$mod, D, exec, ${noctaliaCmd} ipc call launcher toggle"
-          "$mod SHIFT, S, exec, ${noctaliaCmd} ipc call settings toggle"
-          "$mod, C, exec, ${noctaliaCmd} ipc call controlCenter toggle"
-          "$mod, N, exec, ${noctaliaCmd} ipc call notifications toggleHistory"
-          "$mod, M, exec, ${noctaliaCmd} ipc call sessionMenu toggle"
-          "$mod, W, exec, ${noctaliaCmd} ipc call wallpaper toggle"
+          "$mod, D, exec, ${noctaliaCmd} msg panel-toggle launcher"
+          "$mod SHIFT, S, exec, ${noctaliaCmd} msg settings-toggle"
+          "$mod, C, exec, ${noctaliaCmd} msg panel-toggle control-center home"
+          "$mod, N, exec, ${noctaliaCmd} msg panel-toggle control-center notifications"
+          "$mod, M, exec, ${noctaliaCmd} msg panel-toggle session"
+          "$mod, W, exec, ${noctaliaCmd} msg panel-toggle wallpaper"
           "$mod, Q, killactive"
           "$mod, F, fullscreen"
           "$mod, V, togglefloating"
