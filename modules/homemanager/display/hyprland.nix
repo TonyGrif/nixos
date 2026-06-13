@@ -37,12 +37,12 @@ in {
       systemd.enable = false;
 
       settings = {
-        appLauncher = {
-          overviewLayer = true;
-        };
         bar = {
-          displayMode = "always_visible";
-          position = "top";
+          default = {
+            auto_hide = false;
+            position = "top";
+            reserve_space = true;
+          };
         };
         wallpaper = {
           enabled = true;
