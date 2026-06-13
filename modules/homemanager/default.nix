@@ -4,6 +4,6 @@
     ./apps
     ./display
     ./dev
-    ./gaming
+    ./gaming.nix
   ];
 }
