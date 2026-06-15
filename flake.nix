@@ -8,7 +8,7 @@
 
     hardware.url = "github:nixos/nixos-hardware";
 
-    noctalia-shell.url = "github:noctalia-dev/noctalia-shell";
+    noctalia-shell.url = "github:noctalia-dev/noctalia-shell/v4.7.7";
     noctalia-shell.inputs.nixpkgs.follows = "nixpkgs";
   };
 
