@@ -1,6 +1,7 @@
 {
   inputs,
   outputs,
+  pkgs,
   ...
 }: {
   imports = [
@@ -47,6 +48,10 @@
   services = {
     docker.enable = true;
   };
+
+  environment.systemPackages = with pkgs; [
+    rpcs3Official
+  ];
 
   gaming = {
     steam.enable = true;
