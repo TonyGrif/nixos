@@ -13,6 +13,11 @@ in {
         default = 14;
         description = "Font size for kitty terminal";
       };
+      fontType = lib.mkOption {
+        type = lib.types.str;
+        default = "monospace";
+        description = "Font family for kitty terminal";
+      };
     };
   };
 
@@ -21,7 +26,7 @@ in {
       enable = true;
 
       settings = {
-        font_family = "monospace";
+        font_family = "family=\"${cfg.fontType}\"";
         font_size = cfg.fontSize;
 
         scrollback_lines = 5000;

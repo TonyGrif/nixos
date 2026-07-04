@@ -20,7 +20,6 @@ in {
           with cores; [
             sameboy # Gameboy
           ]))
-        rpcs3
       ];
   };
 }
