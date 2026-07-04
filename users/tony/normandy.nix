@@ -54,6 +54,8 @@
 
   kitty = {
     enable = true;
+    fontSize = 14;
+    fontType = "JetBrainsMono Nerd Font Mono";
   };
 
   coding = {
