@@ -49,6 +49,7 @@ in {
             python
             toml
             yaml
+            typst
           ]))
       ];
     };
@@ -64,6 +65,7 @@ in {
         lua-language-server
         texlab
         pyright
+        tinymist
       ];
   };
 }
