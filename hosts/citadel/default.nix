@@ -47,6 +47,7 @@
 
   services = {
     docker.enable = true;
+    libvirtd.enable = true;
   };
 
   environment.systemPackages = with pkgs; [
