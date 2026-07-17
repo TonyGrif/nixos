@@ -10,6 +10,7 @@
   noctaliaCmd = lib.getExe noctalia;
   wpctl = lib.getExe' pkgs.wireplumber "wpctl";
   playerctl = lib.getExe pkgs.playerctl;
+  xrdb = lib.getExe' pkgs.xorg.xrdb "xrdb";
   wallpaperDir = "${config.home.homeDirectory}/Pictures/Wallpapers";
 in {
   imports = [
@@ -63,9 +64,21 @@ in {
       settings = {
         exec-once = [
           noctaliaCmd
+          # force_zero_scaling (below) stops Hyprland from scaling XWayland
+          # clients, which fixes games being capped at a downscaled logical
+          # resolution, but leaves XWayland with no DPI awareness at all, so
+          # X11/XWayland apps (e.g. Steam) default to 96 DPI and render
+          # microscopically on a 4k panel. Xft.dpi is the one DPI signal
+          # XWayland/X11 clients read uniformly, so set it to match the
+          # monitor scale (2x): 96 * 2 = 192.
+          "sh -c 'echo \"Xft.dpi: 192\" | ${xrdb} -merge -'"
         ];
 
         monitor = cfg.monitors;
+
+        xwayland = {
+          force_zero_scaling = true;
+        };
 
         input = {
           kb_layout = "us";
