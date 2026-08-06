@@ -50,6 +50,7 @@ in {
             toml
             yaml
             typst
+            bash
           ]))
       ];
     };
@@ -66,6 +67,7 @@ in {
         texlab
         pyright
         tinymist
+        bash-language-server
       ];
   };
 }
