@@ -22,7 +22,7 @@ in {
     programs = {
       firefox = {
         enable = cfg.firefox.enable;
-        configPath = "${config.xdg.configHome}/mozilla/firefox";
+        configPath = ".mozilla/firefox";
         # Required for Wayland screen sharing (PipeWire screencast).
         package = lib.mkIf cfg.firefox.enable (pkgs.wrapFirefox (pkgs.firefox-unwrapped.override {pipewireSupport = true;}) {});
       };
