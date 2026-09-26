@@ -5,5 +5,6 @@
     ./display
     ./dev
     ./gaming.nix
+    ./work.nix
   ];
 }
