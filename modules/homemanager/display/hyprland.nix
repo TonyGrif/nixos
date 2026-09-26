@@ -6,7 +6,7 @@
   ...
 }: let
   cfg = config.hyprland;
-  noctalia = inputs.noctalia-shell.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  noctalia = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
   noctaliaCmd = lib.getExe noctalia;
   wpctl = lib.getExe' pkgs.wireplumber "wpctl";
   playerctl = lib.getExe pkgs.playerctl;
@@ -14,7 +14,7 @@
   wallpaperDir = "${config.home.homeDirectory}/Pictures/Wallpapers";
 in {
   imports = [
-    inputs.noctalia-shell.homeModules.default
+    inputs.noctalia.homeModules.default
   ];
 
   options = {
@@ -33,16 +33,12 @@ in {
     # Disable HM's portal module to avoid duplicate user portal configuration/warnings.
     xdg.portal.enable = lib.mkForce false;
 
-    programs.noctalia-shell = {
+    programs.noctalia = {
       enable = true;
       systemd.enable = false;
 
       settings = {
-        appLauncher = {
-          overviewLayer = true;
-        };
-        bar = {
-          displayMode = "always_visible";
+        bar.main = {
           position = "top";
         };
         wallpaper = {
@@ -121,12 +117,12 @@ in {
         bind = [
           # Launchers
           "$mod, Space, exec, kitty"
-          "$mod, D, exec, ${noctaliaCmd} ipc call launcher toggle"
-          "$mod SHIFT, S, exec, ${noctaliaCmd} ipc call settings toggle"
-          "$mod, C, exec, ${noctaliaCmd} ipc call controlCenter toggle"
-          "$mod, N, exec, ${noctaliaCmd} ipc call notifications toggleHistory"
-          "$mod, M, exec, ${noctaliaCmd} ipc call sessionMenu toggle"
-          "$mod, W, exec, ${noctaliaCmd} ipc call wallpaper toggle"
+          "$mod, D, exec, ${noctaliaCmd} msg panel-toggle launcher"
+          "$mod SHIFT, S, exec, ${noctaliaCmd} msg settings-toggle"
+          "$mod, C, exec, ${noctaliaCmd} msg panel-toggle control-center"
+          "$mod, N, exec, ${noctaliaCmd} msg panel-toggle control-center notifications"
+          "$mod, M, exec, ${noctaliaCmd} msg panel-toggle session"
+          "$mod, W, exec, ${noctaliaCmd} msg panel-toggle wallpaper"
           "$mod, Q, killactive"
           "$mod, F, fullscreen"
           "$mod, V, togglefloating"
