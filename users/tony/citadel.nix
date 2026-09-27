@@ -73,6 +73,10 @@
     codex.enable = true;
   };
 
+  work.enable = true;
+
+  programs.lazydocker.enable = true;
+
   home.packages = with pkgs; [
     libreoffice-fresh
     discord
@@ -91,6 +95,7 @@
 
     termusic
     texliveFull
+    nicotine-plus
   ];
 
   home = {

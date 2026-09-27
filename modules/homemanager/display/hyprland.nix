@@ -6,7 +6,7 @@
   ...
 }: let
   cfg = config.hyprland;
-  noctalia = inputs.noctalia.packages.${pkgs.stdenv.hostPlatform.system}.default;
+  noctalia = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.noctalia;
   noctaliaCmd = lib.getExe noctalia;
   wpctl = lib.getExe' pkgs.wireplumber "wpctl";
   playerctl = lib.getExe pkgs.playerctl;
@@ -35,6 +35,7 @@ in {
 
     programs.noctalia = {
       enable = true;
+      package = noctalia;
       systemd.enable = false;
 
       settings = {
