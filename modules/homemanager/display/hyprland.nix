@@ -57,6 +57,11 @@ in {
             "session"
           ];
         };
+        shell.screenshot = {
+          save_to_file = true;
+          directory = "${config.home.homeDirectory}/Pictures/Screenshots";
+          copy_to_clipboard = true;
+        };
         wallpaper = {
           enabled = true;
           directory = wallpaperDir;
@@ -177,7 +182,8 @@ in {
           "$mod SHIFT, 6, movetoworkspace, 6"
 
           # Screenshot
-          "$mod, P, exec, grimblast copy area"
+          "$mod, P, exec, ${noctaliaCmd} msg screenshot-fullscreen"
+          "$mod CTRL, P, exec, ${noctaliaCmd} msg screenshot-region"
         ];
 
         bindel = [

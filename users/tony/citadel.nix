@@ -87,7 +87,6 @@
     pavucontrol # Audio
     yazi # TUI File Manager
     wl-clipboard # Clip
-    grim # Screenshots
 
     tmux
     unstable.uv
