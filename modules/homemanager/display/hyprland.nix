@@ -40,6 +40,21 @@ in {
       settings = {
         bar.main = {
           position = "top";
+          start = ["launcher" "wallpaper" "clock"];
+          center = ["workspaces"];
+          end = [
+            "media"
+            "tray"
+            "notifications"
+            "clipboard"
+            "network"
+            "bluetooth"
+            "volume"
+            "brightness"
+            "battery"
+            "control-center"
+            "session"
+          ];
         };
         wallpaper = {
           enabled = true;
