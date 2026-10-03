@@ -57,6 +57,11 @@ in {
             "session"
           ];
         };
+        shell.launcher = {
+          # Desktop entry IDs (.desktop filename without extension), shown top-to-bottom
+          pinned = ["firefox" "discord"];
+          sort_by_usage = true;
+        };
         shell.screenshot = {
           save_to_file = true;
           directory = "${config.home.homeDirectory}/Pictures/Screenshots";
