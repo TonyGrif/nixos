@@ -8,6 +8,7 @@
   cfg = config.hyprland;
   noctalia = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.noctalia;
   noctaliaCmd = lib.getExe noctalia;
+  walkerCmd = lib.getExe config.services.walker.package;
   wpctl = lib.getExe' pkgs.wireplumber "wpctl";
   playerctl = lib.getExe pkgs.playerctl;
   xrdb = lib.getExe' pkgs.xorg.xrdb "xrdb";
@@ -57,11 +58,6 @@ in {
             "session"
           ];
         };
-        shell.launcher = {
-          # Desktop entry IDs (.desktop filename without extension), shown top-to-bottom
-          pinned = ["firefox" "discord"];
-          sort_by_usage = true;
-        };
         shell.screenshot = {
           save_to_file = true;
           directory = "${config.home.homeDirectory}/Pictures/Screenshots";
@@ -72,6 +68,12 @@ in {
           directory = wallpaperDir;
         };
       };
+    };
+
+    services.elephant.enable = true;
+    services.walker = {
+      enable = true;
+      systemd.enable = true;
     };
 
     home.activation.createNoctaliaWallpaperDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
@@ -143,7 +145,8 @@ in {
         bind = [
           # Launchers
           "$mod, Space, exec, kitty"
-          "$mod, D, exec, ${noctaliaCmd} msg panel-toggle launcher"
+          "$mod, D, exec, ${walkerCmd}"
+          "$mod, minus, exec, ${noctaliaCmd} msg panel-toggle launcher"
           "$mod SHIFT, S, exec, ${noctaliaCmd} msg settings-toggle"
           "$mod, C, exec, ${noctaliaCmd} msg panel-toggle control-center"
           "$mod, N, exec, ${noctaliaCmd} msg panel-toggle control-center notifications"
