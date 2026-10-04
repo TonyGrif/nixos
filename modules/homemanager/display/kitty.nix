@@ -31,6 +31,11 @@ in {
 
         scrollback_lines = 5000;
 
+        # Kitty saves and restores its last window state, including
+        # "maximized". Hyprland marks tiled windows as maximized, so kitty
+        # sends set_maximized() at startup and covers the other tiles.
+        remember_window_size = false;
+
         enable_audio_bell = false;
       };
     };
