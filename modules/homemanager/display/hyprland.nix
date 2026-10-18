@@ -58,6 +58,7 @@ in {
             "session"
           ];
         };
+        widget.clock.format = "{:%a %b %d  %H:%M}";
         shell.screenshot = {
           save_to_file = true;
           directory = "${config.home.homeDirectory}/Pictures/Screenshots";
