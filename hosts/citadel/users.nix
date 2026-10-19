@@ -13,6 +13,8 @@ in {
       "networkmanager"
       "wheel"
       "input"
+      "video"
+      "render"
     ];
     packages = [pkgs.home-manager];
   };

@@ -50,8 +50,16 @@
     libvirtd.enable = true;
   };
 
+  # ROCm compute for the RX 6800 XT (gfx1030)
+  hardware.amdgpu.opencl.enable = true;
+  systemd.tmpfiles.rules = [
+    "L+ /opt/rocm/hip - - - - ${pkgs.rocmPackages.clr}"
+  ];
+
   environment.systemPackages = with pkgs; [
     rpcs3Official
+    rocmPackages.rocminfo
+    rocmPackages.rocm-smi
   ];
 
   gaming = {
