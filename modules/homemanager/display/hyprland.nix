@@ -68,6 +68,18 @@ in {
           enabled = true;
           directory = wallpaperDir;
         };
+        notification = {
+          filter_order = ["claude-code"];
+          # Claude Code notifies through kitty with the summary "Claude Code"
+          filter.claude-code = {
+            enabled = true;
+            match = "kitty";
+            match_content = "^Claude Code$";
+            show_toast = false;
+            save_history = false;
+            play_sound = false;
+          };
+        };
       };
     };
 
@@ -151,6 +163,9 @@ in {
           "$mod SHIFT, S, exec, ${noctaliaCmd} msg settings-toggle"
           "$mod, C, exec, ${noctaliaCmd} msg panel-toggle control-center"
           "$mod, N, exec, ${noctaliaCmd} msg panel-toggle control-center notifications"
+          "$mod SHIFT, N, exec, ${noctaliaCmd} msg notification-dnd-toggle"
+          #"$mod CTRL, N, exec, ${noctaliaCmd} msg notification-clear-active"
+          "$mod CTRL, N, exec, ${noctaliaCmd} msg notification-clear-history"
           "$mod, M, exec, ${noctaliaCmd} msg panel-toggle session"
           "$mod, W, exec, ${noctaliaCmd} msg panel-toggle wallpaper"
           "$mod, Q, killactive"
