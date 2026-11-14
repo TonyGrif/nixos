@@ -8,7 +8,7 @@
   cfg = config.hyprland;
   noctalia = inputs.nixpkgs-unstable.legacyPackages.${pkgs.stdenv.hostPlatform.system}.noctalia;
   noctaliaCmd = lib.getExe noctalia;
-  walkerCmd = lib.getExe config.services.walker.package;
+  rofiCmd = lib.getExe config.programs.rofi.finalPackage;
   wpctl = lib.getExe' pkgs.wireplumber "wpctl";
   playerctl = lib.getExe pkgs.playerctl;
   xrdb = lib.getExe' pkgs.xorg.xrdb "xrdb";
@@ -59,6 +59,9 @@ in {
           ];
         };
         widget.clock.format = "{:%a %b %d  %H:%M}";
+        # Noctalia has no toggle for the urgent (red) workspace highlight, so
+        # render urgent workspaces with the normal occupied color instead.
+        widget.workspaces.urgent_color = "secondary";
         shell.screenshot = {
           save_to_file = true;
           directory = "${config.home.homeDirectory}/Pictures/Screenshots";
@@ -83,11 +86,8 @@ in {
       };
     };
 
-    services.elephant.enable = true;
-    services.walker = {
-      enable = true;
-      systemd.enable = true;
-    };
+    # $mod, D launches rofi, so make sure the rofi module is on.
+    rofi.enable = lib.mkDefault true;
 
     home.activation.createNoctaliaWallpaperDir = lib.hm.dag.entryAfter ["writeBoundary"] ''
       mkdir -p ${lib.escapeShellArg wallpaperDir}
@@ -158,7 +158,7 @@ in {
         bind = [
           # Launchers
           "$mod, Space, exec, kitty"
-          "$mod, D, exec, ${walkerCmd}"
+          "$mod, D, exec, ${rofiCmd} -show drun"
           "$mod, minus, exec, ${noctaliaCmd} msg panel-toggle launcher"
           "$mod SHIFT, S, exec, ${noctaliaCmd} msg settings-toggle"
           "$mod, C, exec, ${noctaliaCmd} msg panel-toggle control-center"
