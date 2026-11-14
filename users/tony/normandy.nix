@@ -58,6 +58,12 @@
     fontType = "JetBrainsMono Nerd Font Mono";
   };
 
+  rofi = {
+    enable = true;
+    fontSize = 14;
+    fontType = "JetBrainsMono Nerd Font Mono";
+  };
+
   coding = {
     bash = {
       enable = true;

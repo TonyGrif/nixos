@@ -59,6 +59,12 @@
     fontType = "JetBrainsMono Nerd Font Mono";
   };
 
+  rofi = {
+    enable = true;
+    fontSize = 14;
+    fontType = "JetBrainsMono Nerd Font Mono";
+  };
+
   emulation.enable = true;
 
   coding = {
@@ -95,6 +101,7 @@
     termusic
     texliveFull
     nicotine-plus
+    pcsx2
   ];
 
   home = {
