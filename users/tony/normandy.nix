@@ -49,6 +49,15 @@
     enable = true;
     monitors = [
       "eDP-1, 1920x1080@60, 0x0, 1"
+      "HDMI-A-1, 1920x1080@74.97, 1920x0, 1"
+    ];
+    workspaces = [
+      "1, monitor:HDMI-A-1, default:true"
+      "2, monitor:HDMI-A-1"
+      "3, monitor:HDMI-A-1"
+      "4, monitor:HDMI-A-1"
+      "5, monitor:HDMI-A-1"
+      "6, monitor:eDP-1, default:true"
     ];
   };
 
@@ -73,6 +82,7 @@
     claude.enable = true;
     codex.enable = true;
   };
+  work.enable = true;
 
   home.packages = with pkgs; [
     tmux
@@ -85,6 +95,9 @@
     yazi
     rofi
     wl-clipboard
+
+    nicotine-plus
+    termusic
   ];
 
   home = {

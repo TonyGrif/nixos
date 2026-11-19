@@ -26,6 +26,11 @@ in {
         default = ["DP-3, 3840x2160@144, 0x0, 1"];
         description = "Hyprland monitor configuration strings (name, resolution@hz, position, scale)";
       };
+      workspaces = lib.mkOption {
+        type = lib.types.listOf lib.types.str;
+        default = [];
+        description = "Hyprland workspace rules (e.g. \"1, monitor:HDMI-A-1, default:true\")";
+      };
     };
   };
 
@@ -112,6 +117,7 @@ in {
         ];
 
         monitor = cfg.monitors;
+        workspace = cfg.workspaces;
 
         xwayland = {
           force_zero_scaling = true;
